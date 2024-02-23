@@ -1,4 +1,5 @@
 import 'package:drogovat/features/home/presentation/views/widgets/my_navigation_rail.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/ques_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -8,8 +9,28 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        MyNavigationRail(),
-        Column()
+        const MyNavigationRail(),
+        const SizedBox(
+          width: 10,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20,bottom: 29),
+              child: Column(
+                children: [
+                  QuesListView(),
+                  const SizedBox(height: 20,),
+                  Container(
+                    height: 60,
+                    width: 200,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
