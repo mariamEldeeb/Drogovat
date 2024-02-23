@@ -2,6 +2,8 @@ import 'package:drogovat/features/home/presentation/views/widgets/my_navigation_
 import 'package:drogovat/features/home/presentation/views/widgets/ques_list_view.dart';
 import 'package:flutter/material.dart';
 
+import 'large_button.dart';
+
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
@@ -21,11 +23,7 @@ class HomeViewBody extends StatelessWidget {
                 children: [
                   QuesListView(),
                   const SizedBox(height: 20,),
-                  Container(
-                    height: 60,
-                    width: 200,
-                    color: Colors.green,
-                  ),
+                  const LargeButton(text: 'Next',),
                 ],
               ),
             ),
