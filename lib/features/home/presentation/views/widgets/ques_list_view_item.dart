@@ -1,17 +1,17 @@
-import 'package:drogovat/core/colors.dart';
-import 'package:drogovat/core/styles.dart';
+import 'package:drogovat/core/utils/colors.dart';
+import 'package:drogovat/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_input_container.dart';
+
 class QuesListViewItem extends StatelessWidget {
-  const QuesListViewItem({super.key, required this.quesText});
+  const QuesListViewItem({super.key, required this.quesText, required this.index});
 
   final String quesText;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
-
     return Row(
       children: [
         SizedBox(
@@ -26,14 +26,7 @@ class QuesListViewItem extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 50,),
-        Container(
-          width: w / 1.4,
-          height: h / 11,
-          decoration: BoxDecoration(
-              color: textFormFiledColor,
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
+        CustomInputContainer(index: index,),
       ],
     );
   }

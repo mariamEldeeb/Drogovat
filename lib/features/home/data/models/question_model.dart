@@ -1,29 +1,75 @@
-class QuestionModel {
-  String ques;
+class InputModel {
+  String inputText;
+  String? hintText;
+  bool? isRadio;
+  bool? isUpDown;
+  String? unitText;
+  String? radio1, radio2;
 
-  QuestionModel({required this.ques});
+  InputModel({
+    required this.inputText,
+    this.hintText,
+    this.isUpDown,
+    this.unitText,
+    required this.isRadio,
+    this.radio1,
+    this.radio2,
+  });
 }
 
-List<QuestionModel> questions = [
-  QuestionModel(
-    ques: 'Height',
+List<InputModel> inputs = [
+  InputModel(
+    inputText: 'Height',
+    hintText: '000',
+    unitText: 'cm',
+    isUpDown: true,
+    isRadio: false,
   ),
-  QuestionModel(
-    ques: 'Weight',
+  InputModel(
+    inputText: 'Weight',
+    hintText: '000',
+    unitText: 'kg',
+    isUpDown: true,
+    isRadio: false,
   ),
-  QuestionModel(
-    ques: 'Age',
+  InputModel(
+    inputText: 'Age',
+    isUpDown: true,
+    isRadio: false,
   ),
-  QuestionModel(
-    ques: 'Heart State',
+  InputModel(
+    inputText: 'Gender',
+    isRadio: true,
+    radio1: 'Male',
+    radio2: 'Female',
   ),
-  QuestionModel(
-    ques: 'Hypertension',
+  InputModel(
+    inputText: 'Heart State',
+    isRadio: true,
+    radio1: 'Stable',
+    radio2: 'UnStable',
   ),
-  QuestionModel(
-    ques: 'Full / Half',
+  InputModel(
+    inputText: 'Hypertension',
+    isRadio: true,
+    radio1: 'Yes',
+    radio2: 'No',
   ),
-  QuestionModel(
-    ques: 'Period of operation',
+  InputModel(
+    inputText: 'Diabetes',
+    isRadio: true,
+    radio1: 'Yes',
+    radio2: 'No',
+  ),
+  InputModel(
+    inputText: 'Full / Half',
+    isRadio: true,
+    radio1: 'Full',
+    radio2: 'Half',
+  ),
+  InputModel(
+    inputText: 'Period of operation',
+    hintText: '00 : 00',
+    isRadio: false,
   ),
 ];

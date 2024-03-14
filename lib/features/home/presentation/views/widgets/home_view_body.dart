@@ -9,21 +9,21 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        const MyNavigationRail(),
-        const SizedBox(
-          width: 10,
+        MyNavigationRail(),
+        SizedBox(
+          width: 20,
         ),
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(top: 20,bottom: 29),
+              padding: EdgeInsets.only(top: 23,bottom: 29),
               child: Column(
                 children: [
                   QuesListView(),
-                  const SizedBox(height: 20,),
-                  const LargeButton(text: 'Next',),
+                  SizedBox(height: 20,),
+                  LargeButton(text: 'Next',),
                 ],
               ),
             ),

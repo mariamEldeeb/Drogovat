@@ -3,9 +3,7 @@ import 'package:drogovat/features/home/presentation/views/widgets/ques_list_view
 import 'package:flutter/material.dart';
 
 class QuesListView extends StatelessWidget {
-  QuesListView({super.key});
-
-  List<QuestionModel> ques = List.from(questions);
+  const QuesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class QuesListView extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return QuesListViewItem(
-          quesText: ques[index].ques,
+          quesText: inputs[index].inputText, index: index,
         );
       },
       separatorBuilder: (context, index) {
@@ -22,7 +20,7 @@ class QuesListView extends StatelessWidget {
           height: 15,
         );
       },
-      itemCount: ques.length,
+      itemCount: inputs.length,
     );
   }
 }
