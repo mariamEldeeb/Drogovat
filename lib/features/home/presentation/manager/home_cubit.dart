@@ -23,4 +23,11 @@ class HomeCubit extends Cubit<HomeStates> {
     print(selectedIndex);
     emit(ChangeIndexState());
   }
+
+  String selectedMeasureUnit = '';
+  void changeMeasureUnit(String value){
+    selectedMeasureUnit = value;
+    print(selectedMeasureUnit);
+    emit(ChangeMeasureUnitState());
+  }
 }

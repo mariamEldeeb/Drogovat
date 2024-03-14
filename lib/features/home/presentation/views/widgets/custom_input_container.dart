@@ -1,5 +1,4 @@
 import 'package:drogovat/features/home/data/models/question_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
@@ -31,13 +30,25 @@ class _CustomInputContainerState extends State<CustomInputContainer> {
         color: textFormFiledColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: inputList[widget.index].isRadio == true ? buildRadio() : Row(
-        children: [
-          Expanded(child: CustomTextFormField(hintText: inputList[widget.index].hintText)),
-          inputList[widget.index].unitText != null ? MeasureUnit(text: inputList[widget.index].unitText) : const SizedBox(),
-          const SizedBox(width: 35,),
-        ],
-      ),
+      child: inputList[widget.index].isRadio == true
+          ? buildRadio()
+          : Row(
+              children: [
+                Expanded(
+                  child: CustomTextFormField(
+                      hintText: inputList[widget.index].hintText),
+                ),
+                if (inputList[widget.index].isHeight != null)
+                  const MeasureUnit(measureUnitText: ['cm', 'inches', 'feet'])
+                else if (inputList[widget.index].isWeight != null)
+                  const MeasureUnit(measureUnitText: ['kg', 'pound'])
+                else
+                  const SizedBox(),
+                const SizedBox(
+                  width: 35,
+                ),
+              ],
+            ),
     );
   }
 
@@ -56,7 +67,7 @@ class _CustomInputContainerState extends State<CustomInputContainer> {
       children: [
         Radio(
           fillColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
+            (Set<MaterialState> states) {
               if (states.contains(MaterialState.selected)) {
                 return Colors.black;
               }

@@ -3,14 +3,16 @@ class InputModel {
   String? hintText;
   bool? isRadio;
   bool? isUpDown;
-  String? unitText;
+  bool? isHeight;
+  bool? isWeight;
   String? radio1, radio2;
 
   InputModel({
     required this.inputText,
     this.hintText,
     this.isUpDown,
-    this.unitText,
+    this.isHeight,
+    this.isWeight,
     required this.isRadio,
     this.radio1,
     this.radio2,
@@ -21,14 +23,14 @@ List<InputModel> inputs = [
   InputModel(
     inputText: 'Height',
     hintText: '000',
-    unitText: 'cm',
+    isHeight: true,
     isUpDown: true,
     isRadio: false,
   ),
   InputModel(
     inputText: 'Weight',
     hintText: '000',
-    unitText: 'kg',
+    isWeight: true,
     isUpDown: true,
     isRadio: false,
   ),

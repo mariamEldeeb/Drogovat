@@ -1,6 +1,8 @@
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
+import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'nav_rail_list_view_item.dart';
 
 class MyNavigationRail extends StatefulWidget {
@@ -15,7 +17,10 @@ class _MyNavigationRailState extends State<MyNavigationRail> {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.of(context).size.height;
+    double h = MediaQuery
+        .of(context)
+        .size
+        .height;
     var cubit = HomeCubit.get(context);
 
     return Container(
@@ -26,12 +31,16 @@ class _MyNavigationRailState extends State<MyNavigationRail> {
       child: ListView.separated(
         itemCount: cubit.navIcons.length,
         itemBuilder: (context, index) {
-          return NavRailListViewItem(
-            cubit: cubit,
-            index: index,
-            isSelected: cubit.selectedIndex == index,
-            onTap: (){
-              cubit.changeIndex(index);
+          return BlocBuilder<HomeCubit, HomeStates>(
+            builder: (context, state) {
+              return NavRailListViewItem(
+                cubit: cubit,
+                index: index,
+                isSelected: cubit.selectedIndex == index,
+                onTap: () {
+                  cubit.changeIndex(index);
+                },
+              );
             },
           );
         },
