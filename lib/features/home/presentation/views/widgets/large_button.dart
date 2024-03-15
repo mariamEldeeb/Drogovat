@@ -10,25 +10,32 @@ class LargeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        showDialog(context: context, builder: (context) => const CustomDialog());
+      onTap: () {
+        showGeneralDialog(
+          context: context,
+          // builder: (context) => const CustomDialog(),
+          pageBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation) {
+            return CustomDialog();
+          },
+        );
       },
       child: Container(
         height: 60,
         width: 200,
-        decoration: BoxDecoration (
-          borderRadius:  BorderRadius.circular(5),
-          gradient:  const LinearGradient (
-            begin:  Alignment(0, -1),
-            end:  Alignment(0, 1),
-            colors:  <Color>[Color(0xff6ed93b), Color(0xff144907)],
-            stops:  <double>[0, 1],
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          gradient: const LinearGradient(
+            begin: Alignment(0, -1),
+            end: Alignment(0, 1),
+            colors: <Color>[Color(0xff6ed93b), Color(0xff144907)],
+            stops: <double>[0, 1],
           ),
-          boxShadow:  const [
+          boxShadow: const [
             BoxShadow(
-              color:  Color(0x3f000000),
-              offset:  Offset(0, 4),
-              blurRadius:  2,
+              color: Color(0x3f000000),
+              offset: Offset(0, 4),
+              blurRadius: 2,
             ),
           ],
         ),

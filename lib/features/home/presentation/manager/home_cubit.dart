@@ -30,4 +30,11 @@ class HomeCubit extends Cubit<HomeStates> {
     print(selectedMeasureUnit);
     emit(ChangeMeasureUnitState());
   }
+
+  Map<String, TextEditingController> controllers = {
+    'height': TextEditingController(),
+    'weight': TextEditingController(),
+    'age': TextEditingController(),
+    'periodOfOperation': TextEditingController(),
+  };
 }

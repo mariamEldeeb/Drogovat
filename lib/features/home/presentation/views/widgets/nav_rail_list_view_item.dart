@@ -45,7 +45,7 @@ class NavRailListViewItem extends StatelessWidget {
             cubit.navIcons[index].text,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 13,
             ),
           ),
         ],

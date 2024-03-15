@@ -1,22 +1,17 @@
 import 'package:drogovat/features/home/data/models/question_model.dart';
+import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'custom_text_form_field.dart';
 import 'measure_unit.dart';
 
-class CustomInputContainer extends StatefulWidget {
-  const CustomInputContainer({super.key, required this.index});
+class CustomInputContainer extends StatelessWidget{
+  CustomInputContainer({super.key, required this.index});
 
-  final int index;
-
-  @override
-  State<CustomInputContainer> createState() => _CustomInputContainerState();
-}
-
-class _CustomInputContainerState extends State<CustomInputContainer> {
   List<InputModel> inputList = List.from(inputs);
   int selectedValue = 0;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +25,19 @@ class _CustomInputContainerState extends State<CustomInputContainer> {
         color: textFormFiledColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: inputList[widget.index].isRadio == true
+      child: inputList[index].isRadio == true
           ? buildRadio()
           : Row(
               children: [
                 Expanded(
                   child: CustomTextFormField(
-                      hintText: inputList[widget.index].hintText),
+                      hintText: inputList[index].hintText,
+                     controller: HomeCubit.get(context).controllers[key],
+                  ),
                 ),
-                if (inputList[widget.index].isHeight != null)
+                if (inputList[index].isHeight != null)
                   const MeasureUnit(measureUnitText: ['cm', 'inches', 'feet'])
-                else if (inputList[widget.index].isWeight != null)
+                else if (inputList[index].isWeight != null)
                   const MeasureUnit(measureUnitText: ['kg', 'pound'])
                 else
                   const SizedBox(),
@@ -56,8 +53,8 @@ class _CustomInputContainerState extends State<CustomInputContainer> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        buildRadioItem(inputList[widget.index].radio1!),
-        buildRadioItem(inputList[widget.index].radio2!)
+        buildRadioItem(inputList[index].radio1!),
+        buildRadioItem(inputList[index].radio2!)
       ],
     );
   }
@@ -77,9 +74,7 @@ class _CustomInputContainerState extends State<CustomInputContainer> {
           value: 1,
           groupValue: selectedValue,
           onChanged: (value) {
-            setState(() {
-              selectedValue = value!;
-            });
+
           },
         ),
         Text(

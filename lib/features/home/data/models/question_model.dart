@@ -64,12 +64,6 @@ List<InputModel> inputs = [
     radio2: 'No',
   ),
   InputModel(
-    inputText: 'Full / Half',
-    isRadio: true,
-    radio1: 'Full',
-    radio2: 'Half',
-  ),
-  InputModel(
     inputText: 'Period of operation',
     hintText: '00 : 00',
     isRadio: false,

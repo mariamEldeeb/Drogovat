@@ -21,7 +21,6 @@ class QuesListViewItem extends StatelessWidget {
             style: Styles.textStyle20,
             softWrap: true,
             maxLines: 2,
-            overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),
         ),
