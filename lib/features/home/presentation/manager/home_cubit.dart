@@ -37,4 +37,11 @@ class HomeCubit extends Cubit<HomeStates> {
     'age': TextEditingController(),
     'periodOfOperation': TextEditingController(),
   };
+
+  List<TextEditingController> controller = [
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+  ];
 }

@@ -1,35 +1,26 @@
-import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 
 class LargeButton extends StatelessWidget {
-  const LargeButton({super.key, required this.text});
+  const LargeButton({super.key, required this.text, this.onTap, required this.color});
 
   final String text;
+  final Function()? onTap;
+  final List<Color> color;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        showGeneralDialog(
-          context: context,
-          // builder: (context) => const CustomDialog(),
-          pageBuilder: (BuildContext context, Animation<double> animation,
-              Animation<double> secondaryAnimation) {
-            return CustomDialog();
-          },
-        );
-      },
+      onTap: onTap,
       child: Container(
         height: 60,
         width: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          gradient: const LinearGradient(
-            begin: Alignment(0, -1),
-            end: Alignment(0, 1),
-            colors: <Color>[Color(0xff6ed93b), Color(0xff144907)],
-            stops: <double>[0, 1],
+          gradient: LinearGradient(
+            begin: const Alignment(0, -1),
+            end: const Alignment(0, 1),
+            colors: color,
+            stops: const <double>[0, 1],
           ),
           boxShadow: const [
             BoxShadow(

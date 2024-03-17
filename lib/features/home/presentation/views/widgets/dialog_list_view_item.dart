@@ -4,7 +4,7 @@ import '../../../../../core/utils/colors.dart';
 import '../../../data/models/question_model.dart';
 
 class DialogListViewItem extends StatelessWidget {
-  const DialogListViewItem({super.key, required this.index});
+  const DialogListViewItem({super.key, required this.index,});
 
   final int index;
 
@@ -34,7 +34,7 @@ class DialogListViewItem extends StatelessWidget {
           ),
           child: const Center(
             child: Text(
-              'tesst',
+              'outputText',
               style: TextStyle(
                 fontSize: 20,
               ),

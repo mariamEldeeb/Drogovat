@@ -32,7 +32,6 @@ class CustomInputContainer extends StatelessWidget{
                 Expanded(
                   child: CustomTextFormField(
                       hintText: inputList[index].hintText,
-                     controller: HomeCubit.get(context).controllers[key],
                   ),
                 ),
                 if (inputList[index].isHeight != null)
