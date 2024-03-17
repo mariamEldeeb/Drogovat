@@ -1,3 +1,4 @@
+import 'package:drogovat/features/home/presentation/views/widgets/build_drug_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/functions/show_custom_dialog.dart';
@@ -48,7 +49,10 @@ buildConfirmDialog(BuildContext context) {
                 text: 'Confirm',
                 textColor: Colors.white,
                 onTap: () {
-                  showCustomDialog(context: context);
+                  showCustomDialog(
+                    context: context,
+                    child: buildDrugDialog(),
+                  );
                 },
               ),
             ],
