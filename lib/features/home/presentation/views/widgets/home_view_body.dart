@@ -1,3 +1,4 @@
+import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/my_navigation_rail.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/ques_list_view.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
                   ),
                   LargeButton(
                     text: 'Next',
-                    color: const <Color>[Color(0xff6ed93b), Color(0xff144907)],
+                    color: gradiantGreenColor,
                     onTap: () {
                       showCustomDialog(context: context, child: buildConfirmDialog(context));
                     },

@@ -8,3 +8,4 @@ const String drugIcon = 'assets/icons/drug sign.svg';
 
 // images
 const String drugImage = 'assets/images/drug_image.png';
+const String noBackDrugImage = 'assets/images/no_back_drug_image.png';

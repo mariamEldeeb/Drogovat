@@ -9,3 +9,4 @@ const Color outputContainerColor = Color(0xffE5E5E5);
 const Color outlineButtonTextColor = Color(0xff5D5D5D);
 Color dialogBarrierColor = const Color(0xffA5A4A4).withOpacity(0.5);
 Color greenTextOnButtonColor = const Color(0xffA9FF80);
+List<Color> gradiantGreenColor = const [Color(0xff6ed93b), Color(0xff144907)];
