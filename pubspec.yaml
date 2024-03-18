@@ -81,6 +81,9 @@ flutter:
     - family: Imprima
       fonts:
         - asset: assets/fonts/Imprima-Regular.ttf
+    - family: Digital
+      fonts:
+        - asset: assets/fonts/digital-7.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

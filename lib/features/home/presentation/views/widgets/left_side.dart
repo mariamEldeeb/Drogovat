@@ -1,7 +1,9 @@
+import 'package:drogovat/core/functions/navigate.dart';
 import 'package:drogovat/core/utils/assets.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/core/widgets/large_button.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/title_container.dart';
+import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -25,7 +27,7 @@ class LeftSide extends StatelessWidget {
     ];
 
     return Container(
-      width: 610,
+      // width: 610,
       margin: const EdgeInsets.only(top: 25, bottom: 32),
       child: Column(
         children: [
@@ -34,10 +36,14 @@ class LeftSide extends StatelessWidget {
             text: 'Suitable Anesthesia Drug',
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 50,top: 30),
+            padding: const EdgeInsets.only(left: 50, top: 30),
             child: Row(
               children: [
-                Image.asset(drugImage),
+                Container(
+                  width: 180,
+                  height: 250,
+                    color: innerContainerColor,
+                    child: Image.asset(noBackDrugImage)),
                 const SizedBox(width: 50),
                 SizedBox(
                   width: 260,
@@ -82,7 +88,13 @@ class LeftSide extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          LargeButton(text: 'Start Operation', color: gradiantGreenColor)
+          LargeButton(
+            text: 'Start Operation',
+            color: gradiantGreenColor,
+            onTap: () {
+              navigateTo(const MonitorView());
+            },
+          )
         ],
       ),
     );
