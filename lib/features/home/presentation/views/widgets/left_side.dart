@@ -24,8 +24,9 @@ class LeftSide extends StatelessWidget {
       '200 ml',
     ];
 
-    return SizedBox(
+    return Container(
       width: 610,
+      margin: const EdgeInsets.only(top: 25, bottom: 32),
       child: Column(
         children: [
           const TitleContainer(

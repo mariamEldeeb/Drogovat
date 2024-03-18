@@ -15,15 +15,12 @@ class FinalRevisionViewBody extends StatelessWidget {
       children: [
         MyNavigationRail(),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(top: 20, bottom: 32),
-            child: Row(
-                children: [
-                  LeftSide(),
-                  RightSide(),
-                ],
-              ),
-          ),
+          child: Row(
+              children: [
+                LeftSide(),
+                RightSide(),
+              ],
+            ),
         ),
       ],
     );
