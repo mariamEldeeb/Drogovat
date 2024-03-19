@@ -17,7 +17,7 @@ class VitalListViewItem extends StatelessWidget {
         Text(
           vitalText,
           style: const TextStyle(
-            fontSize: 15,
+            fontSize: 20,
             color: Colors.white,
           ),
         ),
@@ -27,6 +27,7 @@ class VitalListViewItem extends StatelessWidget {
           style: TextStyle(
             fontSize: 50,
             color: color,
+            height: 0,
           ),
         ),
       ],

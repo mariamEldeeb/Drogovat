@@ -7,10 +7,10 @@ class MonitorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         backgroundColor: monitorBgColor,
-        body: const MonitorViewBody(),
+        body: MonitorViewBody(),
       ),
     );
   }
