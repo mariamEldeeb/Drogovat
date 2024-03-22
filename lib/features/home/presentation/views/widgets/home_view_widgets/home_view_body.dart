@@ -27,6 +27,8 @@ class HomeViewBody extends StatelessWidget {
                     height: 20,
                   ),
                   LargeButton(
+                    w: 200,
+                    h: 60,
                     text: 'Next',
                     color: gradiantGreenColor,
                     onTap: () {

@@ -11,10 +11,10 @@ class FinalRevisionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         MyNavigationRail(),
-        const Expanded(
+        Expanded(
           child: Row(
             children: [
               Expanded(

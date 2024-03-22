@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class LargeButton extends StatelessWidget {
-  const LargeButton({super.key, required this.text, this.onTap, required this.color});
+  const LargeButton({super.key, required this.text, this.onTap, required this.color, required this.w, required this.h});
 
   final String text;
   final Function()? onTap;
   final List<Color> color;
+  final double w;
+  final double h;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 60,
-        width: 200,
+        height: h,
+        width: w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           gradient: LinearGradient(

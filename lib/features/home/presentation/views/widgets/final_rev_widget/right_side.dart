@@ -22,7 +22,6 @@ class RightSide extends StatelessWidget {
 
     return Container(
       color: smallContainerColor,
-      // width: 286,
       padding: const EdgeInsets.only(top: 25),
       child: Column(
         children: [

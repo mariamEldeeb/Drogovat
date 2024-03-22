@@ -10,13 +10,13 @@ class TimeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 15, bottom: 15),
-      width: MediaQuery.of(context).size.width,
+      width:  745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 6.95,
       decoration: BoxDecoration(
         color: darkBlueColor,
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
-          width: 2,
+          width: 1,
           color: const Color(0xFF0E6ABF),
         ),
       ),

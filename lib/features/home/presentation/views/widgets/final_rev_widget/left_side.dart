@@ -61,6 +61,8 @@ class LeftSide extends StatelessWidget {
           ),
           const Spacer(),
           LargeButton(
+            w: 200,
+            h: 60,
             text: 'Start Operation',
             color: gradiantGreenColor,
             onTap: () {

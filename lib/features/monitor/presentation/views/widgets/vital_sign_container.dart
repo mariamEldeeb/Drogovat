@@ -11,13 +11,13 @@ class VitalSignContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 15, right: 50, top: 15),
-      width: MediaQuery.of(context).size.width,
+      width: 745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 2.25,
       decoration: BoxDecoration(
         color: darkBlueColor,
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
-          width: 2,
+          width: 1,
           color: const Color(0xFF0E6ABF),
         ),
       ),
