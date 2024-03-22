@@ -1,8 +1,8 @@
 import 'package:drogovat/core/utils/colors.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/title_container.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/title_container.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/question_model.dart';
+import '../../../../data/models/question_model.dart';
 
 class RightSide extends StatelessWidget {
   const RightSide({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/colors.dart';
+import '../../../../../../core/utils/colors.dart';
 
 class TitleContainer extends StatelessWidget {
   const TitleContainer({super.key, required this.text, required this.width});

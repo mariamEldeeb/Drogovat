@@ -1,4 +1,4 @@
-import 'package:drogovat/features/home/presentation/views/widgets/final_revision_view_body.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/final_revision_view_body.dart';
 import 'package:flutter/material.dart';
 
 class FinalRevisionView extends StatelessWidget {

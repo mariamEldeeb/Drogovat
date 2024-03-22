@@ -16,26 +16,12 @@ class _CustomProgressIndicatorState extends State<CustomProgressIndicator> {
   Widget build(BuildContext context) {
 
     return Padding(
-      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Row(
         children: [
           Container(
             height: 171,
             width: 30,
-            // decoration: BoxDecoration(
-            //   gradient: const LinearGradient(
-            //     begin: Alignment(1.00, 0.02),
-            //     end: Alignment(-1, -0.02),
-            //     colors: [
-            //       Color(0xFFB6B6B6),
-            //       Color(0xFFD9D9D9),
-            //       Color(0xFFF6F6F6),
-            //       Color(0xFFD9D9D9),
-            //       Color(0xFFB6B6B6)
-            //     ],
-            //   ),
-            //   borderRadius: BorderRadius.circular(30),
-            // ),
             child: LiquidLinearProgressIndicator(
               value: 0.7,
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.blueAccent),

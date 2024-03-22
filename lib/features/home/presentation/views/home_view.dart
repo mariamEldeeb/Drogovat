@@ -1,5 +1,5 @@
 import 'package:drogovat/core/utils/colors.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

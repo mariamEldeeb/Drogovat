@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/functions/navigate.dart';
-import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/colors.dart';
-import '../final_revision_view.dart';
-import 'custom_btn.dart';
+import '../../../../../../core/functions/navigate.dart';
+import '../../../../../../core/utils/assets.dart';
+import '../../../../../../core/utils/colors.dart';
+import '../../final_revision_view.dart';
+import '../custom_btn.dart';
 
 buildDrugDialog() {
   return Container(

@@ -1,11 +1,11 @@
-import 'package:drogovat/features/home/presentation/views/widgets/build_drug_dialog.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_drug_dialog.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/functions/show_custom_dialog.dart';
-import '../../../data/models/question_model.dart';
-import 'custom_btn.dart';
-import 'custom_outline_btn.dart';
-import 'dialog_list_view_item.dart';
+import '../../../../../../core/functions/show_custom_dialog.dart';
+import '../../../../data/models/question_model.dart';
+import '../custom_btn.dart';
+import '../custom_outline_btn.dart';
+import '../dialog_list_view_item.dart';
 
 buildConfirmDialog(BuildContext context) {
   return Container(

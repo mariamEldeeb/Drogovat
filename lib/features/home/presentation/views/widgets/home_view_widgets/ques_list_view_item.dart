@@ -1,8 +1,7 @@
-import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'custom_input_container.dart';
+import '../custom_input_container.dart';
 
 class QuesListViewItem extends StatelessWidget {
   const QuesListViewItem({super.key, required this.quesText, required this.index});

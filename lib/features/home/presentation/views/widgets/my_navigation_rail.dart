@@ -5,18 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'nav_rail_list_view_item.dart';
 
-class MyNavigationRail extends StatefulWidget {
+class MyNavigationRail extends StatelessWidget {
   const MyNavigationRail({super.key});
 
-  @override
-  State<MyNavigationRail> createState() => _MyNavigationRailState();
-}
-
-class _MyNavigationRailState extends State<MyNavigationRail> {
-  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+
     double h = MediaQuery
         .of(context)
         .size

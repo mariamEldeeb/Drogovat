@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 
 class VitalListViewItem extends StatelessWidget {
   const VitalListViewItem({
-    super.key, required this.vitalText, required this.vitalValue, required this.color,
+    super.key,
+    required this.vitalText,
+    required this.vitalValue,
+    required this.color,
+    required this.index,
   });
 
   final String vitalText;
   final String vitalValue;
   final Color color;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,9 @@ class VitalListViewItem extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        const SizedBox(width: 10,),
+        const SizedBox(
+          width: 10,
+        ),
         Text(
           vitalValue,
           style: TextStyle(

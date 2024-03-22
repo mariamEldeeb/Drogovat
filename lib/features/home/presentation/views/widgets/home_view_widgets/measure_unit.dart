@@ -2,8 +2,8 @@ import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utils/colors.dart';
-import '../../manager/home_cubit.dart';
+import '../../../../../../core/utils/colors.dart';
+import '../../../manager/home_cubit.dart';
 
 class MeasureUnit extends StatelessWidget {
   const MeasureUnit({super.key, required this.measureUnitText});

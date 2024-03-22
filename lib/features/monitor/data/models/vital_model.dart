@@ -4,11 +4,15 @@ class VitalModel {
   final String vitalText;
   final String vitalValue;
   final Color vitalValueColor;
+  final bool? isHeartIcon;
+  final bool? isDegreeIcon;
 
   VitalModel({
     required this.vitalText,
     required this.vitalValue,
     required this.vitalValueColor,
+    this.isHeartIcon,
+    this.isDegreeIcon,
   });
 }
 
@@ -17,6 +21,7 @@ List<VitalModel> vitals = [
     vitalText: 'Heart\nRate',
     vitalValue: '120 / 80',
     vitalValueColor: const Color(0xffFF2929),
+    isHeartIcon: true,
   ),
   VitalModel(
     vitalText: 'Blood\npressure',
@@ -42,6 +47,7 @@ List<VitalModel> vitals = [
     vitalText: 'Temperature',
     vitalValue: '37',
     vitalValueColor: const Color(0xff5DFF4E),
+    isDegreeIcon: true,
   ),
   VitalModel(
     vitalText: 'Electrocardiogram',

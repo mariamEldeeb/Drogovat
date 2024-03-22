@@ -1,3 +1,4 @@
+import 'package:drogovat/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,7 +8,9 @@ class NavRailListViewItem extends StatelessWidget {
   const NavRailListViewItem({
     super.key,
     required this.cubit,
-    required this.index, this.onTap, required this.isSelected,
+    required this.index,
+    this.onTap,
+    required this.isSelected,
   });
 
   final HomeCubit cubit;
@@ -22,24 +25,27 @@ class NavRailListViewItem extends StatelessWidget {
       child: Column(
         children: [
           SvgPicture.asset(
-            cubit.navIcons[index].icon,
+            isSelected ? cubit.navIcons[index].whiteIcon : cubit.navIcons[index].icon,
+            fit: BoxFit.cover,
           ),
           const SizedBox(
             height: 9,
           ),
-          isSelected ? Container(
-            height: 5,
-            width: 35,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 10,
-                  color: Colors.white,
-                ),
-              ],
-            ),
-          ) : const SizedBox(),
+          isSelected
+              ? Container(
+                  height: 5,
+                  width: 35,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 10,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                )
+              : const SizedBox(),
           const SizedBox(height: 3),
           Text(
             cubit.navIcons[index].text,

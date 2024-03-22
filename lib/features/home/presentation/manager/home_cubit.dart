@@ -12,12 +12,25 @@ class HomeCubit extends Cubit<HomeStates> {
   static HomeCubit get(context) => BlocProvider.of(context);
 
   List<NavIcon> navIcons = [
-    NavIcon(icon: homeIcon, text: 'Home'),
-    NavIcon(icon: drugIcon, text: 'Drugs'),
-    NavIcon(icon: settingsIcon, text: 'Settings'),
+    NavIcon(
+      icon: homeIcon,
+      whiteIcon: whiteHomeIcon,
+      text: 'Home',
+    ),
+    NavIcon(
+      icon: drugIcon,
+      whiteIcon: whiteDrugIcon,
+      text: 'Drugs',
+    ),
+    NavIcon(
+      icon: settingsIcon,
+      whiteIcon: whiteSettingsIcon,
+      text: 'Settings',
+    ),
   ];
 
   int selectedIndex = 0;
+
   changeIndex(int index) {
     selectedIndex = index;
     print(selectedIndex);
@@ -25,7 +38,8 @@ class HomeCubit extends Cubit<HomeStates> {
   }
 
   String selectedMeasureUnit = '';
-  void changeMeasureUnit(String value){
+
+  void changeMeasureUnit(String value) {
     selectedMeasureUnit = value;
     print(selectedMeasureUnit);
     emit(ChangeMeasureUnitState());

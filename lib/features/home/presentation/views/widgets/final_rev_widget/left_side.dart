@@ -1,33 +1,24 @@
 import 'package:drogovat/core/functions/navigate.dart';
 import 'package:drogovat/core/utils/assets.dart';
 import 'package:drogovat/core/utils/colors.dart';
+import 'package:drogovat/core/widgets/drug_image_container.dart';
 import 'package:drogovat/core/widgets/large_button.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/title_container.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/left_side_list_view_item.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/title_container.dart';
 import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../../../../core/data/models/drug_information.dart';
 
 class LeftSide extends StatelessWidget {
   const LeftSide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<String> drugInfo = [
-      'Loading',
-      'Maintenance',
-      'Duration',
-      'Full amount',
-    ];
-    List<String> drugInfoDose = [
-      '150 ml',
-      '25 ml',
-      '15 m',
-      '200 ml',
-    ];
 
     return Container(
-      // width: 610,
       margin: const EdgeInsets.only(top: 25, bottom: 32),
       child: Column(
         children: [
@@ -39,11 +30,10 @@ class LeftSide extends StatelessWidget {
             padding: const EdgeInsets.only(left: 50, top: 30),
             child: Row(
               children: [
-                Container(
-                  width: 180,
-                  height: 250,
-                    color: innerContainerColor,
-                    child: Image.asset(noBackDrugImage)),
+                const DrugImageContainer(
+                  bgColor: innerContainerColor,
+                  imagePath: noBackDrugImage,
+                ),
                 const SizedBox(width: 50),
                 SizedBox(
                   width: 260,
@@ -52,25 +42,7 @@ class LeftSide extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: drugInfo.length,
                     itemBuilder: (context, index) {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            drugInfo[index],
-                            style: const TextStyle(
-                              color: Color(0xff424242),
-                              fontSize: 16,
-                            ),
-                          ),
-                          const SizedBox(width: 50),
-                          Text(
-                            drugInfoDose[index],
-                            style: const TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      );
+                      return LeftSideListViewItem(index: index);
                     },
                     separatorBuilder: (context, index) {
                       return const SizedBox(height: 30);

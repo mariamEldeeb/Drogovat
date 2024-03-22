@@ -1,5 +1,5 @@
 import 'package:drogovat/features/home/data/models/question_model.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/ques_list_view_item.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/ques_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class QuesListView extends StatelessWidget {

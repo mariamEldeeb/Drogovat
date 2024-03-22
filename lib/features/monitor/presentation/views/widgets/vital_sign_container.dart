@@ -10,7 +10,7 @@ class VitalSignContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 15, right: 50),
+      padding: const EdgeInsets.only(left: 15, right: 50, top: 15),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 2.25,
       decoration: BoxDecoration(
@@ -34,6 +34,7 @@ class VitalSignContainer extends StatelessWidget {
                     vitalText: vitals[index].vitalText,
                     vitalValue: vitals[index].vitalValue,
                     color: vitals[index].vitalValueColor,
+                    index: index,
                   );
                 },
               separatorBuilder: (context, index){
@@ -51,6 +52,7 @@ class VitalSignContainer extends StatelessWidget {
                   vitalText: vitals[index + 3].vitalText,
                   vitalValue: vitals[index + 3].vitalValue,
                   color: vitals[index + 3].vitalValueColor,
+                  index: index,
                 );
               },
             ),
