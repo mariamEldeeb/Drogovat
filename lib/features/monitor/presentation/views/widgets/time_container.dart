@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/colors.dart';
 
 class TimeContainer extends StatelessWidget {
-  const TimeContainer({super.key});
+  const TimeContainer({super.key,});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 15, bottom: 15),
-      width:  745, //MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width,//745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 6.95,
       decoration: BoxDecoration(
         color: darkBlueColor,

@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/colors.dart';
 
 class DoseInfoContainer extends StatelessWidget {
-  const DoseInfoContainer({super.key});
+  const DoseInfoContainer({super.key, });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 20),
-      width: 745, //MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width, //745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 3.55,
       decoration: BoxDecoration(
         color: darkBlueColor,
@@ -24,6 +24,7 @@ class DoseInfoContainer extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 15),
