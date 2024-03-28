@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        MyNavigationRail(),
+        const MyNavigationRail(),
         const SizedBox(width: 20),
         Expanded(
           child: SingleChildScrollView(
@@ -32,7 +32,11 @@ class HomeViewBody extends StatelessWidget {
                     text: 'Next',
                     color: gradiantGreenColor,
                     onTap: () {
-                      showCustomDialog(context: context, child: buildConfirmDialog(context));
+                      showCustomDialog(
+                        context: context,
+                        child: buildConfirmDialog(context),
+                        barrierColor: dialogBarrierColor,
+                      );
                     },
                   ),
                 ],

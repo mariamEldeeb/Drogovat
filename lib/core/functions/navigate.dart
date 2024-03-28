@@ -8,3 +8,19 @@ navigateTo(Widget page){
     transition: Transition.fade,
   );
 }
+
+navigateOffTo(Widget page){
+  Get.off(
+        () => page,
+    duration: const Duration(milliseconds: 300),
+    transition: Transition.fade,
+  );
+}
+
+navigateOffAllTo(Widget page){
+  Get.offAll(
+        () => page,
+    duration: const Duration(milliseconds: 300),
+    transition: Transition.fade,
+  );
+}

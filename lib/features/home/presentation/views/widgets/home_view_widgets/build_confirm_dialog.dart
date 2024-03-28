@@ -1,10 +1,11 @@
+import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_drug_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/functions/show_custom_dialog.dart';
 import '../../../../data/models/question_model.dart';
-import '../custom_btn.dart';
-import '../custom_outline_btn.dart';
+import '../../../../../../core/widgets/custom_filled_btn.dart';
+import '../../../../../../core/widgets/custom_outline_btn.dart';
 import '../dialog_list_view_item.dart';
 
 buildConfirmDialog(BuildContext context) {
@@ -45,13 +46,14 @@ buildConfirmDialog(BuildContext context) {
                   return Navigator.pop(context);
                 },
               ),
-              CustomButton(
+              CustomFilledButton(
                 text: 'Confirm',
                 textColor: Colors.white,
                 onTap: () {
                   showCustomDialog(
                     context: context,
                     child: buildDrugDialog(),
+                    barrierColor: dialogBarrierColor,
                   );
                 },
               ),

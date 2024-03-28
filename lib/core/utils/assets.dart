@@ -8,6 +8,7 @@ const String settingsIcon = 'assets/icons/setting.svg';
 const String drugIcon = 'assets/icons/drug sign.svg';
 const String degreeIcon = 'assets/icons/degree_icon.svg';
 const String heartIcon = 'assets/icons/heart_icon.svg';
+const String warningSign = 'assets/icons/warning_sign.png';
 
 // images
 const String drugImage = 'assets/images/drug_image.png';

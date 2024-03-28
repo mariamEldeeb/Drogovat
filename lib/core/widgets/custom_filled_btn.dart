@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/colors.dart';
+import '../utils/colors.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text, this.onTap, this.textColor});
+class CustomFilledButton extends StatelessWidget {
+  const CustomFilledButton({
+    super.key,
+    required this.text,
+    this.onTap,
+    this.textColor,
+  });
 
   final String text;
   final Function()? onTap;

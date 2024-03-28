@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/colors.dart';
+import '../utils/colors.dart';
 
 class CustomOutlineButton extends StatelessWidget {
   const CustomOutlineButton({super.key, required this.text, this.onTap});

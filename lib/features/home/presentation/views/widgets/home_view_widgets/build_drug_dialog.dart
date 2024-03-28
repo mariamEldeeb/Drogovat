@@ -4,7 +4,7 @@ import '../../../../../../core/functions/navigate.dart';
 import '../../../../../../core/utils/assets.dart';
 import '../../../../../../core/utils/colors.dart';
 import '../../final_revision_view.dart';
-import '../custom_btn.dart';
+import '../../../../../../core/widgets/custom_filled_btn.dart';
 
 buildDrugDialog() {
   return Container(
@@ -45,7 +45,7 @@ buildDrugDialog() {
         Row(
           children: [
             const Spacer(),
-            CustomButton(
+            CustomFilledButton(
               text: 'DONE',
               textColor: greenTextOnButtonColor,
               onTap: (){

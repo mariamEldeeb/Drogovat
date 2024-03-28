@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../features/home/presentation/views/widgets/custom_dialog.dart';
 import '../utils/colors.dart';
 
-Future<Object?> showCustomDialog({required BuildContext context, Widget? child}) {
+Future<Object?> showCustomDialog({required BuildContext context, Widget? child, required Color barrierColor}) {
   return showGeneralDialog(
     barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
     // barrierDismissible: true,
-    barrierColor: dialogBarrierColor,
+    barrierColor: barrierColor,
     context: context,
     pageBuilder: (BuildContext context,
         Animation<double> animation,

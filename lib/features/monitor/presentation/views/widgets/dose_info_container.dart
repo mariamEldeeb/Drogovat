@@ -1,3 +1,4 @@
+import 'package:drogovat/core/functions/show_custom_dialog.dart';
 import 'package:drogovat/features/monitor/presentation/views/widgets/dose_info_time.dart';
 import 'package:drogovat/features/monitor/presentation/views/widgets/previous_dose.dart';
 import 'package:drogovat/features/monitor/presentation/views/widgets/progress_indecator.dart';
@@ -5,15 +6,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
+import 'build_warning_dialog.dart';
 
 class DoseInfoContainer extends StatelessWidget {
-  const DoseInfoContainer({super.key, });
+  const DoseInfoContainer({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 20),
-      width: MediaQuery.of(context).size.width, //745, //MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width,
+      //745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 3.55,
       decoration: BoxDecoration(
         color: darkBlueColor,
@@ -35,8 +40,24 @@ class DoseInfoContainer extends StatelessWidget {
             width: 230,
             child: PreviousDose(),
           ),
-          SizedBox(width: MediaQuery.of(context).size.width / 22,),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 22,
+          ),
           const CustomProgressIndicator(),
+          FilledButton(
+            onPressed: () {
+              showCustomDialog(
+                context: context,
+                child: buildWarningDialog(context),
+                barrierColor: warningDialogBarrierColor,
+              );
+            },
+            child: Container(
+              color: Colors.white,
+              width: 15,
+              height: 15,
+            ),
+          )
         ],
       ),
     );

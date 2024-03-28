@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/date_time.dart';
 import 'digital_number_container.dart';
 
 class DoseInfoTime extends StatelessWidget {
@@ -10,17 +11,20 @@ class DoseInfoTime extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'Next potion at: ',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,
               ),
             ),
-            DigitalNumberContainer(),
+            DigitalNumberContainer(
+              h: hour,
+              m: minute,
+            ),
           ],
         ),
         const SizedBox(height: 15,),

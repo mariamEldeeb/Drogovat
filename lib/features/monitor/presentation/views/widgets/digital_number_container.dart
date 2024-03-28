@@ -1,16 +1,18 @@
 import 'package:drogovat/core/digital_number/digital_font.dart';
-import 'package:drogovat/core/utils/date_time.dart';
 import 'package:flutter/material.dart';
 
 import 'digital_num_with_bg.dart';
 
 class DigitalNumberContainer extends StatelessWidget {
-  const DigitalNumberContainer({super.key});
+  const DigitalNumberContainer({super.key, required this.h, required this.m});
+
+  final int h;
+  final int m;
 
   @override
   Widget build(BuildContext context) {
-    final hours = createNumberTime(hour);
-    final minutes = createNumberTime(minute);
+    final hours = createNumberTime(h);
+    final minutes = createNumberTime(m);
 
     return SizedBox(
       width: 140,
