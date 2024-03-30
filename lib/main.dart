@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
+          colorScheme: ColorScheme.fromSeed(seedColor: darkBlueColor)
               .copyWith(background: backgroundColor),
           fontFamily: 'Imprima',
         ),
