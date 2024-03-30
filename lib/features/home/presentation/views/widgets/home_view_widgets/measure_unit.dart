@@ -20,8 +20,8 @@ class MeasureUnit extends StatelessWidget {
         return PopupMenuButton(
           color: smallContainerColor,
           child: Container(
-            width: 109,
-            height: 29,
+            width: 110,
+            height: 30,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
               color: smallContainerColor,

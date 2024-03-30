@@ -32,7 +32,7 @@ class LeftSide extends StatelessWidget {
               children: [
                 const DrugImageContainer(
                   bgColor: innerContainerColor,
-                  imagePath: noBackDrugImage,
+                  imagePath: Drug1Image,
                 ),
                 const SizedBox(width: 50),
                 SizedBox(

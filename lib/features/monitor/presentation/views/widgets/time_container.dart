@@ -14,7 +14,6 @@ class TimeContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 15, bottom: 15),
       width: MediaQuery.of(context).size.width,
-      //745, //MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 6.95,
       decoration: BoxDecoration(
         color: darkBlueColor,

@@ -39,7 +39,7 @@ class DrugContainer extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  noBackDrugImage,
+                  Drug1Image,
                 ),
                 const Text(
                   'Cetacaine',

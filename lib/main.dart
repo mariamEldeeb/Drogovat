@@ -1,4 +1,5 @@
 import 'package:drogovat/core/utils/colors.dart';
+import 'package:drogovat/features/drugs/presentation/views/drugs_view.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/home/presentation/views/final_revision_view.dart';
 import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         getPages: pages,
-        home: const MonitorView(),
+        home: const HomeView(),
       ),
     );
   }
