@@ -47,6 +47,8 @@ buildConfirmDialog(BuildContext context) {
                 },
               ),
               CustomFilledButton(
+                width: 112,
+                height: 42,
                 text: 'Confirm',
                 textColor: Colors.white,
                 onTap: () {

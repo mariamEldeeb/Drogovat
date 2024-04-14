@@ -9,6 +9,7 @@ class SearchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 20),
+      height: 45,
       width: 360,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),

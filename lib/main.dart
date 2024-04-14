@@ -2,6 +2,8 @@ import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/drugs/presentation/views/drugs_view.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/home/presentation/views/final_revision_view.dart';
+import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
+import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
 import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeCubit()),
+        BlocProvider(create: (context) => InitPageCubit()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         getPages: pages,
-        home: const HomeView(),
+        home: const InitPageView(),
       ),
     );
   }

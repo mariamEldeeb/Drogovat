@@ -56,6 +56,8 @@ buildWarningDialog(BuildContext context) {
               },
             ),
             CustomFilledButton(
+              width: 96,
+              height: 36,
               text: 'Yes',
               textColor: Colors.white,
               onTap: (){

@@ -5,26 +5,25 @@ import '../../../../../core/utils/colors.dart';
 
 class DigitalNumWithBG extends StatelessWidget {
   const DigitalNumWithBG({
-    super.key, required this.value,
+    super.key,
+    required this.value,
   });
 
   final int value;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        children: [
-          DigitalNumber(
-            value: 8,
-            height: 50,
-            color:lightDigitalNumColor,
-          ),
-          DigitalNumber(
-            value: value,
-            height: 50,
-            color: Colors.white,
-          ),
-        ]
-    );
+    return Stack(children: [
+      DigitalNumber(
+        value: 8,
+        height: 50,
+        color: lightDigitalNumColor,
+      ),
+      DigitalNumber(
+        value: value,
+        height: 50,
+        color: Colors.white,
+      ),
+    ]);
   }
 }

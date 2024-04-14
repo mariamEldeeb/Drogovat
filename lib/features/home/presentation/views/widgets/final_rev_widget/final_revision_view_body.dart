@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import 'left_side.dart';
 import 'right_side.dart';
-import '../my_navigation_rail.dart';
+import '../../../../../init_page/presentation/views/widgets/my_navigation_rail.dart';
 
 class FinalRevisionViewBody extends StatelessWidget {
   const FinalRevisionViewBody({super.key});

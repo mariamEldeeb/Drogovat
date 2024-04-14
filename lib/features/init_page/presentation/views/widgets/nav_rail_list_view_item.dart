@@ -1,8 +1,7 @@
-import 'package:drogovat/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../manager/home_cubit.dart';
+import '../../manager/init_page_cubit.dart';
 
 class NavRailListViewItem extends StatelessWidget {
   const NavRailListViewItem({
@@ -13,7 +12,7 @@ class NavRailListViewItem extends StatelessWidget {
     required this.isSelected,
   });
 
-  final HomeCubit cubit;
+  final InitPageCubit cubit;
   final int index;
   final void Function()? onTap;
   final bool isSelected;

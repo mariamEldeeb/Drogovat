@@ -46,6 +46,8 @@ buildDrugDialog() {
           children: [
             const Spacer(),
             CustomFilledButton(
+              width: 120,
+              height: 44,
               text: 'DONE',
               textColor: greenTextOnButtonColor,
               onTap: (){

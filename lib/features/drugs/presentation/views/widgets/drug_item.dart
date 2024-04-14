@@ -13,7 +13,7 @@ class DrugItem extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.only(top: 30),
-          width: 130,
+          width: 140,
           height: 155,
           decoration: BoxDecoration(
             color: drugItemConColor,

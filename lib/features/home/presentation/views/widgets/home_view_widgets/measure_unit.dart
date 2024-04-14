@@ -6,9 +6,10 @@ import '../../../../../../core/utils/colors.dart';
 import '../../../manager/home_cubit.dart';
 
 class MeasureUnit extends StatelessWidget {
-  const MeasureUnit({super.key, required this.measureUnitText});
+  const MeasureUnit({super.key, required this.measureUnitText, required this.index});
 
   final List<String> measureUnitText;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
