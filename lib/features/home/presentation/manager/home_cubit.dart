@@ -1,8 +1,3 @@
-import 'package:drogovat/core/functions/navigate.dart';
-import 'package:drogovat/core/utils/assets.dart';
-import 'package:drogovat/features/drugs/presentation/views/drugs_view.dart';
-import 'package:drogovat/features/home/presentation/views/home_view.dart';
-import 'package:drogovat/features/settings/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,4 +29,11 @@ class HomeCubit extends Cubit<HomeStates> {
     TextEditingController(),
     TextEditingController(),
   ];
+
+  String? radioGroupValue = '';
+  void changeRadioValue(String? newValue){
+    radioGroupValue = newValue;
+    print(radioGroupValue);
+    emit(ChangeRadioValueState());
+  }
 }

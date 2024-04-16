@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LargeButton extends StatelessWidget {
   const LargeButton({super.key, required this.text, this.onTap, required this.color, required this.w, required this.h});
@@ -19,27 +20,27 @@ class LargeButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           gradient: LinearGradient(
-            begin: const Alignment(0, -1),
-            end: const Alignment(0, 1),
+            begin: Alignment(-0.5, 1),
+            end: Alignment(1, 0),
             colors: color,
-            stops: const <double>[0, 1],
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x3f000000),
-              offset: Offset(0, 4),
-              blurRadius: 2,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              text,
+              style: const TextStyle(
+                fontSize: 25,
+                color: Colors.white,
+              ),
+            ),
+            Icon(
+              FontAwesomeIcons.arrowRight,
+              color: Colors.white,
+              size: 28,
             ),
           ],
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontSize: 25,
-              color: Colors.white,
-            ),
-          ),
         ),
       ),
     );

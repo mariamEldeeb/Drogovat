@@ -14,21 +14,12 @@ class DrugImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180,
-      height: 250,
-      color: bgColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(imagePath),
-          const Text(
-            'Cetacaine',
-            style: TextStyle(
-              color: Color(0xff9C0000),
-              fontSize: 20,
-            ),
-          ),
-        ],
+      height: 180,
+      decoration: BoxDecoration(
+        color: bgColor,
+        shape: BoxShape.circle,
       ),
+      child: Image.asset(imagePath),
     );
   }
 }

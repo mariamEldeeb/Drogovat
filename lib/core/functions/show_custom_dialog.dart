@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../features/home/presentation/views/widgets/custom_dialog.dart';
-import '../utils/colors.dart';
 
 Future<Object?> showCustomDialog({required BuildContext context, Widget? child, required Color barrierColor}) {
   return showGeneralDialog(

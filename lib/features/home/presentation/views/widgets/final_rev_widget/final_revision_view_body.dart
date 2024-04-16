@@ -17,14 +17,8 @@ class FinalRevisionViewBody extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              Expanded(
-                flex: 2,
-                child: LeftSide(),
-              ),
-              Expanded(
-                  flex: 1,
-                  child: RightSide(),
-              ),
+              LeftSide(),
+              RightSide(),
             ],
           ),
         ),

@@ -15,5 +15,5 @@ const Color drugItemConColor =  Color(0xffC4C4C4);
 Color lightDigitalNumColor =  const Color(0xffAFAFAF).withOpacity(0.10000000);
 Color dialogBarrierColor = const Color(0xffA5A4A4).withOpacity(0.5);
 Color warningDialogBarrierColor = const Color(0xff04060E).withOpacity(0.8);
-List<Color> gradiantGreenColor = const [Color(0xff6ed93b), Color(0xff144907)];
+List<Color> gradiantGreenColor = const [Color(0xFF6ED93B), Color(0xFF144807)];
 List<Color> gradiantRedColor = const [Color(0xFFD93B3B), Color(0xFF480707)];
