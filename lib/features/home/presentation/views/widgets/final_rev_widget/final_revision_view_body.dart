@@ -14,13 +14,11 @@ class FinalRevisionViewBody extends StatelessWidget {
     return const Row(
       children: [
         MyNavigationRail(),
-        Expanded(
-          child: Row(
-            children: [
-              LeftSide(),
-              RightSide(),
-            ],
-          ),
+        Row(
+          children: [
+            LeftSide(),
+            RightSide(),
+          ],
         ),
       ],
     );

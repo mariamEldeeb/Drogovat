@@ -1,4 +1,3 @@
-import 'package:drogovat/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class VitalModel {

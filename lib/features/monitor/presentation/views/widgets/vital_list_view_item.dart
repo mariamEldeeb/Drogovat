@@ -1,4 +1,3 @@
-import 'package:drogovat/features/monitor/data/models/vital_model.dart';
 import 'package:flutter/material.dart';
 
 class VitalListViewItem extends StatelessWidget {

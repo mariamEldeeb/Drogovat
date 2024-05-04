@@ -1,9 +1,6 @@
 import 'package:drogovat/features/home/data/models/question_model.dart';
-import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
-import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_radio_row.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'custom_text_form_field.dart';

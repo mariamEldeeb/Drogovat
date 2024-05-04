@@ -1,4 +1,3 @@
-import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/title_container.dart';
 import 'package:flutter/material.dart';
 
@@ -21,45 +20,57 @@ class RightSide extends StatelessWidget {
     ];
 
     return Container(
-      color: smallContainerColor,
-      padding: const EdgeInsets.only(top: 25),
+      width: 227,
+      height: double.infinity,
+      margin: const EdgeInsets.only(top: 15, bottom: 20),
+      padding: const EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x6D0A0F22),
+            blurRadius: 3,
+            offset: Offset(0, 4),
+            spreadRadius: 0,
+          ),
+        ],
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Column(
         children: [
-          const TitleContainer(text: 'Patient Information', width: 222),
-          const SizedBox(height: 30,),
+          const BuildTitle(),
+          const SizedBox(height: 25),
           SizedBox(
             width: 260,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 25,),
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemCount: inputs.length,
-                itemBuilder: (context, index){
-                  return Row(
-                    children: [
-                      SizedBox(
-                        width: 135,
-                        child: Text(
+            child: ListView.separated(
+              shrinkWrap: true,
+              itemCount: inputs.length,
+              itemBuilder: (context, index){
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 110,
+                      child: Text(
                           inputs[index].inputText,
                           style: const TextStyle(
                             color: Color(0xff424242),
                             fontSize: 18,
                           ),
                         ),
+                    ),
+                    Text(
+                      output[index],
+                      style: const TextStyle(
+                        fontSize: 20,
                       ),
-                      Text(
-                        output[index],
-                        style: const TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  );
-                },
-                separatorBuilder: (context, index){
-                  return const SizedBox(height: 25);
-                },
-              ),
+                    ),
+                  ],
+                );
+              },
+              separatorBuilder: (context, index){
+                return const SizedBox(height: 20);
+              },
             ),
           )
         ],

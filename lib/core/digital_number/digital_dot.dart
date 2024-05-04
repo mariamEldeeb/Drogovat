@@ -8,9 +8,7 @@ class DigitalDot extends StatelessWidget {
   final Color color;
 
   DigitalDot({Key? key, required this.height, required this.color})
-      : assert(height != null),
-        assert(color != null),
-        super(key: key);
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

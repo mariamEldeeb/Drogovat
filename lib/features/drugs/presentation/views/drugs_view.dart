@@ -1,7 +1,5 @@
 import 'package:drogovat/features/drugs/presentation/views/widgets/drug_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/colors.dart';
