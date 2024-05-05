@@ -14,7 +14,8 @@ class MeasureUnit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = HomeCubit.get(context);
-    cubit.selectedMeasureUnit = measureUnitText[0];
+    cubit.selectedHeightUnit = measureUnitText[0];
+    cubit.selectedWeightUnit = measureUnitText[0];
 
     return BlocBuilder<HomeCubit, HomeStates>(
       builder: (context, state) {
@@ -31,7 +32,7 @@ class MeasureUnit extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  cubit.selectedMeasureUnit,
+                  index == 0 ? cubit.selectedHeightUnit : cubit.selectedWeightUnit,
                   style: const TextStyle(
                     fontSize: 20,
                     color: Colors.black,
@@ -61,7 +62,7 @@ class MeasureUnit extends StatelessWidget {
             );
           },
           onSelected: (newValue) {
-            cubit.changeMeasureUnit(newValue);
+            index == 0 ? cubit.changeHeightUnit(newValue) : cubit.changeWeightUnit(newValue);
           },
         );
       },

@@ -33,7 +33,7 @@ buildConfirmDialog(BuildContext context) {
               separatorBuilder: (context, index) {
                 return const SizedBox(height: 10);
               },
-              itemCount: inputs.length,
+              itemCount: ques.length,
             ),
           ),
           const SizedBox(height: 30),

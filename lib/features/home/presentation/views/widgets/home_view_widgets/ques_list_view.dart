@@ -12,7 +12,7 @@ class QuesListView extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return QuesListViewItem(
-          quesText: inputs[index].inputText,
+          quesText: ques[index].inputText,
           index: index,
         );
       },
@@ -21,7 +21,7 @@ class QuesListView extends StatelessWidget {
           height: 15,
         );
       },
-      itemCount: inputs.length,
+      itemCount: ques.length,
     );
   }
 }

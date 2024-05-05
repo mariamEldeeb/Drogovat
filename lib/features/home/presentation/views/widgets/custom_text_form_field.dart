@@ -8,14 +8,12 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     // required this.controller,
     this.validate,
-    required this.type,
   });
 
   final String? hintText;
 
   // final TextEditingController controller;
   final String? Function(String?)? validate;
-  final TextInputType type;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,6 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         validator: validate,
-        keyboardType: type,
       ),
     );
   }

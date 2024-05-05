@@ -15,7 +15,7 @@ class DialogListViewItem extends StatelessWidget {
         SizedBox(
           width: 120,
           child: Text(
-            inputs[index].inputText,
+            ques[index].inputText,
             style: const TextStyle(
               color: darkBlueColor,
               fontSize: 20,

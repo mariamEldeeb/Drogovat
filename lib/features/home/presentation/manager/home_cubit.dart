@@ -8,27 +8,21 @@ class HomeCubit extends Cubit<HomeStates> {
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
-  String selectedMeasureUnit = '';
+  String selectedHeightUnit = '';
 
-  void changeMeasureUnit(String value) {
-    selectedMeasureUnit = value;
-    print(selectedMeasureUnit);
-    emit(ChangeMeasureUnitState());
+  void changeHeightUnit(String value) {
+    selectedHeightUnit = value;
+    print(selectedHeightUnit);
+    emit(ChangeHeightUnitState());
   }
 
-  Map<String, TextEditingController> controllers = {
-    'height': TextEditingController(),
-    'weight': TextEditingController(),
-    'age': TextEditingController(),
-    'periodOfOperation': TextEditingController(),
-  };
+  String selectedWeightUnit = '';
 
-  List<TextEditingController> controller = [
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-  ];
+  void changeWeightUnit(String value) {
+    selectedWeightUnit = value;
+    print(selectedWeightUnit);
+    emit(ChangeWeightUnitState());
+  }
 
   String? radioGroupValue = '';
   void changeRadioValue(String? newValue){

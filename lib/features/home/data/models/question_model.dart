@@ -1,4 +1,4 @@
-class InputModel {
+class QuestionModel {
   String inputText;
   String? hintText;
   bool? isRadio;
@@ -7,7 +7,7 @@ class InputModel {
   bool? isWeight;
   String? radio1, radio2;
 
-  InputModel({
+  QuestionModel({
     required this.inputText,
     this.hintText,
     this.isUpDown,
@@ -19,51 +19,51 @@ class InputModel {
   });
 }
 
-List<InputModel> inputs = [
-  InputModel(
+List<QuestionModel> ques = [
+  QuestionModel(
     inputText: 'Height',
     hintText: '000',
     isHeight: true,
     isUpDown: true,
     isRadio: false,
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Weight',
     hintText: '000',
     isWeight: true,
     isUpDown: true,
     isRadio: false,
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Age',
     isUpDown: true,
     isRadio: false,
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Gender',
     isRadio: true,
     radio1: 'Male',
     radio2: 'Female',
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Heart State',
     isRadio: true,
     radio1: 'Stable',
     radio2: 'UnStable',
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Hypertension',
     isRadio: true,
     radio1: 'Yes',
     radio2: 'No',
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Diabetes',
     isRadio: true,
     radio1: 'Yes',
     radio2: 'No',
   ),
-  InputModel(
+  QuestionModel(
     inputText: 'Period of operation',
     hintText: '00 : 00',
     isRadio: false,

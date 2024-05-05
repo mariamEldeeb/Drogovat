@@ -1,6 +1,9 @@
 import 'package:drogovat/features/home/data/models/question_model.dart';
+import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
+import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_radio_row.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'custom_text_form_field.dart';
@@ -23,25 +26,24 @@ class CustomInputContainer extends StatelessWidget {
         color: textFormFiledColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: inputs[index].isRadio == true
+      child: ques[index].isRadio == true
           ? MyRadioRow(index: index)
           : Row(
               children: [
                 Expanded(
                   child: CustomTextFormField(
-                    hintText: inputs[index].hintText,
-                    type: TextInputType.number,
+                    hintText: ques[index].hintText,
                   ),
                 ),
-                if (inputs[index].isHeight != null)
+                if (ques[index].isHeight != null)
                   const MeasureUnit(
                     measureUnitText: ['cm', 'inches', 'feet'],
-                    index: 1,
+                    index: 0,
                   )
-                else if (inputs[index].isWeight != null)
+                else if (ques[index].isWeight != null)
                   const MeasureUnit(
                     measureUnitText: ['kg', 'pound'],
-                    index: 2,
+                    index: 1,
                   )
                 else
                   const SizedBox(),

@@ -44,7 +44,7 @@ class RightSide extends StatelessWidget {
             width: 260,
             child: ListView.separated(
               shrinkWrap: true,
-              itemCount: inputs.length,
+              itemCount: ques.length,
               itemBuilder: (context, index){
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +52,7 @@ class RightSide extends StatelessWidget {
                     SizedBox(
                       width: 110,
                       child: Text(
-                          inputs[index].inputText,
+                          ques[index].inputText,
                           style: const TextStyle(
                             color: Color(0xff424242),
                             fontSize: 18,
