@@ -16,3 +16,4 @@ const String drugImage = 'assets/images/drug_image.png';
 const String Drug1Image = 'assets/images/drug1.png';
 const String Drug2Image = 'assets/images/drug2.png';
 const String Drug3Image = 'assets/images/drug3.png';
+const String Drug4Image = 'assets/images/drug4.png';

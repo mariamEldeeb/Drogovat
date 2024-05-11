@@ -1,28 +1,50 @@
 import 'package:drogovat/core/utils/assets.dart';
 
 class DrugModel {
-  int drugId;
-  String drugName;
-  String drugImage;
-  String drugLoadingDose;
-  String drugMaintenanceDose;
-  String drugActiveDuration;
-  String drugFullAmount;
+  String? drugId;
+  String? drugName;
+  String? drugImage;
+  String? drugLoadingDose;
+  String? drugMaintenanceDose;
+  String? drugActiveDuration;
+  String? drugFullAmount;
 
   DrugModel({
-    required this.drugId,
-    required this.drugName,
-    required this.drugImage,
-    required this.drugLoadingDose,
-    required this.drugMaintenanceDose,
-    required this.drugActiveDuration,
-    required this.drugFullAmount,
+    this.drugId,
+    this.drugName,
+    this.drugImage,
+    this.drugLoadingDose,
+    this.drugMaintenanceDose,
+    this.drugActiveDuration,
+    this.drugFullAmount,
   });
+
+  DrugModel.fromJson(Map<String, dynamic> json) {
+    drugId = json['drugId'];
+    drugName = json['drugName'];
+    drugImage = json['drugImage'];
+    drugLoadingDose = json['drugLoadingDose'];
+    drugMaintenanceDose = json['drugMaintenanceDose'];
+    drugActiveDuration = json['drugActiveDuration'];
+    drugFullAmount = json['drugFullAmount'];
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'drugId': drugId,
+      'drugName': drugName,
+      'drugImage': drugImage,
+      'drugLoadingDose': drugLoadingDose,
+      'drugMaintenanceDose': drugMaintenanceDose,
+      'drugActiveDuration': drugActiveDuration,
+      'drugFullAmount': drugFullAmount,
+    };
+  }
 }
 
 List<DrugModel> drugs = [
   DrugModel(
-    drugId: 0101,
+    drugId: '0101',
     drugName: 'Cetacaine',
     drugImage: Drug1Image,
     drugLoadingDose: '150 ml',
@@ -31,7 +53,7 @@ List<DrugModel> drugs = [
     drugFullAmount: '200 ml',
   ),
   DrugModel(
-    drugId: 0102,
+    drugId: '0102',
     drugName: 'Isoflurane',
     drugImage: Drug2Image,
     drugLoadingDose: '100 ml',
@@ -40,7 +62,7 @@ List<DrugModel> drugs = [
     drugFullAmount: '150 ml',
   ),
   DrugModel(
-    drugId: 0103,
+    drugId: '0103',
     drugName: 'Propofol',
     drugImage: Drug3Image,
     drugLoadingDose: '80 ml',
@@ -48,7 +70,7 @@ List<DrugModel> drugs = [
     drugActiveDuration: '10 m',
     drugFullAmount: '150 ml',
   ),DrugModel(
-    drugId: 0103,
+    drugId: '0103',
     drugName: 'Propofol',
     drugImage: Drug3Image,
     drugLoadingDose: '80 ml',
@@ -56,31 +78,7 @@ List<DrugModel> drugs = [
     drugActiveDuration: '10 m',
     drugFullAmount: '150 ml',
   ),DrugModel(
-    drugId: 0103,
-    drugName: 'Propofol',
-    drugImage: Drug3Image,
-    drugLoadingDose: '80 ml',
-    drugMaintenanceDose: '10 ml',
-    drugActiveDuration: '10 m',
-    drugFullAmount: '150 ml',
-  ),DrugModel(
-    drugId: 0103,
-    drugName: 'Propofol',
-    drugImage: Drug3Image,
-    drugLoadingDose: '80 ml',
-    drugMaintenanceDose: '10 ml',
-    drugActiveDuration: '10 m',
-    drugFullAmount: '150 ml',
-  ),DrugModel(
-    drugId: 0103,
-    drugName: 'Propofol',
-    drugImage: Drug3Image,
-    drugLoadingDose: '80 ml',
-    drugMaintenanceDose: '10 ml',
-    drugActiveDuration: '10 m',
-    drugFullAmount: '150 ml',
-  ),DrugModel(
-    drugId: 0103,
+    drugId: '0103',
     drugName: 'Propofol',
     drugImage: Drug3Image,
     drugLoadingDose: '80 ml',

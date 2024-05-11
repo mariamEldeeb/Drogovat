@@ -1,18 +1,29 @@
-import 'package:drogovat/features/home/data/models/question_model.dart';
-import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
-import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_radio_row.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'custom_text_form_field.dart';
 import 'home_view_widgets/measure_unit.dart';
 
 class CustomInputContainer extends StatelessWidget {
-  CustomInputContainer({super.key, required this.index});
+  CustomInputContainer({
+    super.key,
+    required this.isRadio,
+    required this.isHeight,
+    required this.isWeight,
+    this.hintText,
+    this.controller,
+    this.keyboardType,
+    this.radio,
+  });
 
-  final int index;
+  final bool isRadio;
+  final bool isHeight;
+  final bool isWeight;
+  final TextEditingController? controller;
+  final String? hintText;
+  final TextInputType? keyboardType;
+  final Widget? radio;
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +37,23 @@ class CustomInputContainer extends StatelessWidget {
         color: textFormFiledColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: ques[index].isRadio == true
-          ? MyRadioRow(index: index)
+      child: isRadio == true
+          ? radio
           : Row(
               children: [
                 Expanded(
                   child: CustomTextFormField(
-                    hintText: ques[index].hintText,
+                    controller: controller,
+                    hintText: hintText,
+                    keyboardType: keyboardType,
                   ),
                 ),
-                if (ques[index].isHeight != null)
+                if (isHeight == true)
                   const MeasureUnit(
                     measureUnitText: ['cm', 'inches', 'feet'],
                     index: 0,
                   )
-                else if (ques[index].isWeight != null)
+                else if (isWeight == true)
                   const MeasureUnit(
                     measureUnitText: ['kg', 'pound'],
                     index: 1,

@@ -6,14 +6,14 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.hintText,
-    // required this.controller,
-    this.validate,
+    this.controller,
+    this.validate, this.keyboardType,
   });
 
   final String? hintText;
-
-  // final TextEditingController controller;
+  final TextEditingController? controller;
   final String? Function(String?)? validate;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,8 @@ class CustomTextFormField extends StatelessWidget {
       width: 450,
       margin: const EdgeInsets.only(left: 15),
       child: TextFormField(
-        // controller: controller,
+        controller: controller,
+        keyboardType: keyboardType,
         onFieldSubmitted: (value) {
           print(value);
         },

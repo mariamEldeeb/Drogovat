@@ -1,3 +1,4 @@
+import 'package:drogovat/core/functions/conversions.dart';
 import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,11 @@ import '../../../../../../core/utils/colors.dart';
 import '../../../manager/home_cubit.dart';
 
 class MeasureUnit extends StatelessWidget {
-  const MeasureUnit({super.key, required this.measureUnitText, required this.index});
+  const MeasureUnit({
+    super.key,
+    required this.measureUnitText,
+    required this.index,
+  });
 
   final List<String> measureUnitText;
   final int index;
@@ -32,7 +37,9 @@ class MeasureUnit extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  index == 0 ? cubit.selectedHeightUnit : cubit.selectedWeightUnit,
+                  index == 0
+                      ? cubit.selectedHeightUnit
+                      : cubit.selectedWeightUnit,
                   style: const TextStyle(
                     fontSize: 20,
                     color: Colors.black,
@@ -62,7 +69,22 @@ class MeasureUnit extends StatelessWidget {
             );
           },
           onSelected: (newValue) {
-            index == 0 ? cubit.changeHeightUnit(newValue) : cubit.changeWeightUnit(newValue);
+            index == 0
+                ? cubit.changeHeightUnit(newValue)
+                : cubit.changeWeightUnit(newValue);
+            switch(newValue) {
+              case 'inches':
+                convertCMtoIN(double.parse(newValue));
+                break;
+              case 'feet':
+                convertCMtoFT(double.parse(newValue));
+                break;
+              case 'kg':
+                convertLBtoKG(double.parse(newValue));
+                break;
+              case 'pound':
+                convertKGtoLB(double.parse(newValue));
+            }
           },
         );
       },

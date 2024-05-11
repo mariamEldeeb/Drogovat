@@ -1,20 +1,78 @@
-import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/radio_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/question_model.dart';
+import '../../../../../../core/utils/colors.dart';
 
 class MyRadioRow extends StatelessWidget {
-  const MyRadioRow({super.key, required this.index});
+  MyRadioRow({
+    super.key,
+    this.radio1Text,
+    this.radio2Text,
+    this.radio1Value,
+    this.radio2Value,
+    this.groupValue,
+  });
 
-  final int index;
+  final String? radio1Text;
+  final String? radio2Text;
+  final String? radio1Value;
+  final String? radio2Value;
+  final String? groupValue;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        BuildRadioItem(radioText: ques[index].radio1!, radioValue: ques[index].radio1!,),
-        BuildRadioItem(radioText: ques[index].radio2!, radioValue: ques[index].radio2!,),
+        SizedBox(
+          width: 200,
+          child: RadioListTile(
+            title: Text(
+              radio1Text ?? '',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: darkBlueColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            fillColor: MaterialStateColor.resolveWith(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.selected)) {
+                  return darkBlueColor;
+                }
+                return Colors.black45;
+              },
+            ),
+            value: radio1Value,
+            groupValue: groupValue,
+            onChanged: (val) {},
+          ),
+        ),
+        SizedBox(
+          width: 200,
+          child: RadioListTile(
+            title: Text(
+              radio2Text ?? '',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: darkBlueColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            fillColor: MaterialStateColor.resolveWith(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.selected)) {
+                  return darkBlueColor;
+                }
+                return Colors.black45;
+              },
+            ),
+            value: radio2Value,
+            groupValue: groupValue,
+            onChanged: (val) {},
+          ),
+        ),
       ],
     );
   }

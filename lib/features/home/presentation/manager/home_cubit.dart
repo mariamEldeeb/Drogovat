@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:drogovat/features/home/data/models/patient_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../drugs/data/models/drug_model.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
@@ -8,8 +11,18 @@ class HomeCubit extends Cubit<HomeStates> {
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
-  String selectedHeightUnit = '';
+  String? selectedGender = '';
+  String? selectedHeartState = '';
+  String? selectedHypertension = '';
+  String? selectedDiabetes = '';
+  String? selectedOpType = '';
 
+  var heightController = TextEditingController();
+  var weightController = TextEditingController();
+  var ageController = TextEditingController();
+  var periodOfOpController = TextEditingController();
+
+  String selectedHeightUnit = '';
   void changeHeightUnit(String value) {
     selectedHeightUnit = value;
     print(selectedHeightUnit);
@@ -17,17 +30,65 @@ class HomeCubit extends Cubit<HomeStates> {
   }
 
   String selectedWeightUnit = '';
-
   void changeWeightUnit(String value) {
     selectedWeightUnit = value;
     print(selectedWeightUnit);
     emit(ChangeWeightUnitState());
   }
 
-  String? radioGroupValue = '';
-  void changeRadioValue(String? newValue){
-    radioGroupValue = newValue;
-    print(radioGroupValue);
-    emit(ChangeRadioValueState());
+  void createPatient({
+    required String pId,
+    required String height,
+    required String weight,
+    required String age,
+    required String gender,
+    required String heartState,
+    required String hypertension,
+    required String diabetes,
+    required String typeOfOp,
+    required String periodOfOp,
+  }) {
+    PatientModel pModel = PatientModel(
+      pId: pId,
+      height: height,
+      weight: weight,
+      age: age,
+      gender: gender,
+      heartState: heartState,
+      hypertension: hypertension,
+      diabetes: diabetes,
+      typeOfOp: typeOfOp,
+      periodOfOp: periodOfOp,
+    );
+
+    FirebaseFirestore.instance
+        .collection('patients')
+        .doc(pId)
+        .set(pModel.toMap())
+        .then((value) {
+      emit(CreatePatientSuccessState());
+    })
+        .catchError((error) {
+      print(error.toString());
+      emit(CreatePatientErrorState(error.toString()));
+    });
+  }
+
+  List<DrugModel> drugs = [];
+  void getAllDrugs(){
+    if(drugs.isEmpty){
+      FirebaseFirestore.instance
+      .collection('drugs')
+      .get()
+      .then((value){})
+      .catchError((error){});
+    }
+  }
+
+  void onDispose() {
+    heightController.dispose();
+    weightController.dispose();
+    ageController.dispose();
+    periodOfOpController.dispose();
   }
 }

@@ -22,7 +22,7 @@ class DrugItem extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(
-                drugs[index].drugImage,
+                drugs[index].drugImage ?? '',
                 height: 70,
                 width: 70,
               ),
@@ -37,7 +37,7 @@ class DrugItem extends StatelessWidget {
                     )),
                 child: Center(
                   child: Text(
-                    drugs[index].drugName,
+                    drugs[index].drugName ?? '',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,

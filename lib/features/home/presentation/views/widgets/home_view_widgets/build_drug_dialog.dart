@@ -10,12 +10,7 @@ buildDrugDialog() {
   return Container(
     width: 700,
     height: 430,
-    padding: const EdgeInsets.only(
-      top: 30,
-      left: 30,
-      bottom: 25,
-      right: 35,
-    ),
+    padding: const EdgeInsets.only(top: 30, left: 30, bottom: 25, right: 35),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -50,7 +45,7 @@ buildDrugDialog() {
               height: 44,
               text: 'DONE',
               textColor: greenTextOnButtonColor,
-              onTap: (){
+              onTap: () {
                 navigateTo(const FinalRevisionView());
               },
             ),
