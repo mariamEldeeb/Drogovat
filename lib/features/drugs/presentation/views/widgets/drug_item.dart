@@ -1,6 +1,7 @@
 import 'package:drogovat/core/utils/colors.dart';
-import 'package:drogovat/features/drugs/data/models/drug_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../init_page/presentation/manager/init_page_cubit.dart';
 
 class DrugItem extends StatelessWidget {
   const DrugItem({super.key, required this.index});
@@ -9,6 +10,8 @@ class DrugItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = InitPageCubit.get(context);
+
     return Stack(
       children: [
         Container(
@@ -22,7 +25,7 @@ class DrugItem extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(
-                drugs[index].drugImage ?? '',
+                cubit.drugs[index].drugImage ?? '',
                 height: 70,
                 width: 70,
               ),
@@ -37,7 +40,7 @@ class DrugItem extends StatelessWidget {
                     )),
                 child: Center(
                   child: Text(
-                    drugs[index].drugName ?? '',
+                    cubit.drugs[index].drugName ?? '',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -62,7 +65,7 @@ class DrugItem extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              drugs[index].drugId.toString(),
+              cubit.drugs[index].drugId ?? '',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 13,

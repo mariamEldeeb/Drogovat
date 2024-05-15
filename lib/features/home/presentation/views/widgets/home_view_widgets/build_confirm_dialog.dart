@@ -54,7 +54,7 @@ buildConfirmDialog(BuildContext context) {
           ),
           ConfirmItem(
             label: 'Period of operation',
-            outputText: cubit.periodOfOpController.text,
+            outputText: cubit.opDuration,
           ),
           const SizedBox(height: 30),
           Row(
@@ -82,7 +82,7 @@ buildConfirmDialog(BuildContext context) {
                     hypertension: cubit.selectedHypertension ?? '',
                     diabetes: cubit.selectedDiabetes ?? '',
                     typeOfOp: cubit.selectedOpType ?? '',
-                    periodOfOp: cubit.periodOfOpController.text,
+                    periodOfOp: cubit.opDuration,
                    );
                   showCustomDialog(
                     context: context,

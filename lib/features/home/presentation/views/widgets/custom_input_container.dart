@@ -1,4 +1,4 @@
-import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/build_radio_row.dart';
+import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/show_time_wheel.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
@@ -15,6 +15,7 @@ class CustomInputContainer extends StatelessWidget {
     this.controller,
     this.keyboardType,
     this.radio,
+    required this.isTime,
   });
 
   final bool isRadio;
@@ -24,45 +25,48 @@ class CustomInputContainer extends StatelessWidget {
   final String? hintText;
   final TextInputType? keyboardType;
   final Widget? radio;
+  final bool isTime;
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
 
-    return Container(
-      width: w / 1.4,
-      height: h / 11,
-      decoration: BoxDecoration(
-        color: textFormFiledColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: isRadio == true
-          ? radio
-          : Row(
-              children: [
-                Expanded(
-                  child: CustomTextFormField(
-                    controller: controller,
-                    hintText: hintText,
-                    keyboardType: keyboardType,
-                  ),
-                ),
-                if (isHeight == true)
-                  const MeasureUnit(
-                    measureUnitText: ['cm', 'inches', 'feet'],
-                    index: 0,
-                  )
-                else if (isWeight == true)
-                  const MeasureUnit(
-                    measureUnitText: ['kg', 'pound'],
-                    index: 1,
-                  )
-                else
-                  const SizedBox(),
-                const SizedBox(width: 35),
-              ],
+    return isTime
+        ? ShowTimeWheel()
+        : Container(
+            width: w / 1.4,
+            height: h / 11,
+            decoration: BoxDecoration(
+              color: textFormFiledColor,
+              borderRadius: BorderRadius.circular(10),
             ),
-    );
+            child: isRadio == true
+                ? radio
+                : Row(
+                    children: [
+                      Expanded(
+                        child: CustomTextFormField(
+                          controller: controller,
+                          hintText: hintText,
+                          keyboardType: keyboardType,
+                        ),
+                      ),
+                      if (isHeight == true)
+                        const MeasureUnit(
+                          measureUnitText: ['cm', 'inches', 'feet'],
+                          index: 0,
+                        )
+                      else if (isWeight == true)
+                        const MeasureUnit(
+                          measureUnitText: ['kg', 'pound'],
+                          index: 1,
+                        )
+                      else
+                        const SizedBox(),
+                      const SizedBox(width: 35),
+                    ],
+                  ),
+          );
   }
 }

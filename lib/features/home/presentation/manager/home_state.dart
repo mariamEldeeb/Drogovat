@@ -15,11 +15,3 @@ class CreatePatientErrorState extends HomeStates {
 
   CreatePatientErrorState(this.errorMessage);
 }
-
-class GetAllDrugsSuccessState extends HomeStates {}
-
-class GetAllDrugsErrorState extends HomeStates {
-  final String error;
-
-  GetAllDrugsErrorState(this.error);
-}

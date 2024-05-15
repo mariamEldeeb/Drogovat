@@ -18,11 +18,11 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
-  @override
-  void dispose() {
-    HomeCubit.get(context).onDispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   HomeCubit.get(context).onDispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +43,7 @@ class _HomeViewState extends State<HomeView> {
                   hintText: '000',
                   controller: cubit.heightController,
                   keyboardType: TextInputType.number,
+                  isTime: false,
                 ),
                 const SizedBox(height: 10),
                 QuestionItem(
@@ -53,6 +54,7 @@ class _HomeViewState extends State<HomeView> {
                   hintText: '000',
                   controller: cubit.weightController,
                   keyboardType: TextInputType.number,
+                  isTime: false,
                 ),
                 const SizedBox(height: 10),
                 QuestionItem(
@@ -63,6 +65,7 @@ class _HomeViewState extends State<HomeView> {
                   hintText: '00',
                   controller: cubit.ageController,
                   keyboardType: TextInputType.number,
+                  isTime: false,
                 ),
                 const SizedBox(height: 10),
                 QuestionItem(
@@ -70,6 +73,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: true,
+                  isTime: false,
                   radio: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -140,6 +144,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: true,
+                  isTime: false,
                   radio: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -210,6 +215,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: true,
+                  isTime: false,
                   radio: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -280,6 +286,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: true,
+                  isTime: false,
                   radio: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -350,6 +357,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: true,
+                  isTime: false,
                   radio: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -420,9 +428,8 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: false,
                   isRadio: false,
-                  hintText: '00 : 00',
-                  controller: cubit.periodOfOpController,
                   keyboardType: TextInputType.number,
+                  isTime: true,
                 ),
                 const SizedBox(height: 20),
                 CustomFilledButton(

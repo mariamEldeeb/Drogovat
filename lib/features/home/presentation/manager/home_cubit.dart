@@ -20,7 +20,10 @@ class HomeCubit extends Cubit<HomeStates> {
   var heightController = TextEditingController();
   var weightController = TextEditingController();
   var ageController = TextEditingController();
-  var periodOfOpController = TextEditingController();
+  var opDuration = '';
+
+  String selectedHour = '00';
+  String selectedMinute = '00';
 
   String selectedHeightUnit = '';
   void changeHeightUnit(String value) {
@@ -74,21 +77,9 @@ class HomeCubit extends Cubit<HomeStates> {
     });
   }
 
-  List<DrugModel> drugs = [];
-  void getAllDrugs(){
-    if(drugs.isEmpty){
-      FirebaseFirestore.instance
-      .collection('drugs')
-      .get()
-      .then((value){})
-      .catchError((error){});
-    }
-  }
-
   void onDispose() {
     heightController.dispose();
     weightController.dispose();
     ageController.dispose();
-    periodOfOpController.dispose();
   }
 }

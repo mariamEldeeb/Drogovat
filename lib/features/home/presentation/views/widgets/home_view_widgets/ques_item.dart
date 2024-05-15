@@ -14,6 +14,7 @@ class QuestionItem extends StatelessWidget {
     this.controller,
     this.keyboardType,
     this.radio,
+    required this.isTime,
   });
 
   final String label;
@@ -24,6 +25,7 @@ class QuestionItem extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final Widget? radio;
+  final bool isTime;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,7 @@ class QuestionItem extends StatelessWidget {
           hintText: hintText,
           keyboardType: keyboardType,
           radio: radio,
+          isTime: isTime,
         ),
       ],
     );
