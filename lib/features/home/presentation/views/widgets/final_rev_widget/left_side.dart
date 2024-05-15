@@ -1,12 +1,11 @@
 import 'package:drogovat/core/functions/navigate.dart';
-import 'package:drogovat/core/utils/assets.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/core/widgets/drug_image_container.dart';
 import 'package:drogovat/core/widgets/large_button.dart';
 import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/data/models/drug_information.dart';
+import '../../../../../../core/utils/constants.dart';
 import 'left_side_list_view_item.dart';
 
 class LeftSide extends StatelessWidget {
@@ -35,9 +34,11 @@ class LeftSide extends StatelessWidget {
         children: [
           Row(
             children: [
-              const DrugImageContainer(
+              DrugImageContainer(
+                width: 180,
+                height: 180,
                 bgColor: innerContainerColor,
-                imagePath: Drug1Image,
+                imagePath: '${drugs[1].drugImage}',
               ),
               const SizedBox(width: 15),
               Column(
@@ -51,10 +52,11 @@ class LeftSide extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    'Cetacaine',
+                    '${drugs[1].drugName}',
+                    // 'name',
                     style: TextStyle(
                       color: Color(0xff9C0000),
-                      fontSize: 25,
+                      fontSize: 27,
                     ),
                   ),
                 ],
@@ -62,23 +64,36 @@ class LeftSide extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 15),
-          SizedBox(
-            width: 530,
-            child: ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: drugInfo.length,
-              itemBuilder: (context, index) {
-                return LeftSideListViewItem(index: index);
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(height: 5);
-              },
-            ),
+          Column(
+            children: [
+              LeftSideListItem(
+                label: 'Loading',
+                dose: '${drugs[1].drugLoadingDose}',
+                measureUnit: 'ml',
+              ),
+              SizedBox(height: 5),
+              LeftSideListItem(
+                label: 'Maintenance',
+                dose: '${drugs[1].drugMaintenanceDose}',
+                measureUnit: 'ml',
+              ),
+              SizedBox(height: 5),
+              LeftSideListItem(
+                label: 'Duration',
+                dose: '${drugs[1].drugActiveDuration}',
+                measureUnit: 'm',
+              ),
+              SizedBox(height: 5),
+              LeftSideListItem(
+                label: 'Full Amount',
+                dose: '${drugs[1].drugFullAmount}',
+                measureUnit: 'ml',
+              ),
+            ],
           ),
           const SizedBox(height: 15),
-          const Text(
-            'a 200 ml of apparent anesthetic has been added in the pump ',
+          Text(
+            'a ${drugs[1].drugFullAmount} ml of apparent anesthetic has been added in the pump ',
             style: TextStyle(
               fontSize: 20,
             ),

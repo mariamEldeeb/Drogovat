@@ -4,6 +4,7 @@ import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:drogovat/features/settings/presentation/views/settings_view.dart';
 import 'package:get/get.dart';
 
+import '../../features/drugs/data/models/drug_model.dart';
 import '../../features/home/presentation/views/home_view.dart';
 
 List<GetPage<dynamic>>? pages = [
@@ -13,3 +14,5 @@ List<GetPage<dynamic>>? pages = [
   GetPage(name: '/drugsView', page: () => const DrugsView()),
   GetPage(name: '/settingsView', page: () => const SettingsView()),
 ];
+
+List<DrugModel> drugs = [];

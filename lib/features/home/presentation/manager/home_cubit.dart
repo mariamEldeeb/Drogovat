@@ -3,7 +3,6 @@ import 'package:drogovat/features/home/data/models/patient_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../drugs/data/models/drug_model.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeStates> {

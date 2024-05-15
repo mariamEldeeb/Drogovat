@@ -5,21 +5,27 @@ class DrugImageContainer extends StatelessWidget {
     super.key,
     required this.bgColor,
     required this.imagePath,
+    required this.width,
+    required this.height,
   });
 
   final Color bgColor;
   final String imagePath;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
-      height: 180,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: bgColor,
         shape: BoxShape.circle,
       ),
-      child: Image.asset(imagePath),
+      child: Image.asset(
+        imagePath,
+      ),
     );
   }
 }

@@ -1,12 +1,17 @@
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/data/models/drug_information.dart';
+class LeftSideListItem extends StatelessWidget {
+  const LeftSideListItem({
+    super.key,
+    required this.label,
+    required this.dose,
+    required this.measureUnit,
+  });
 
-class LeftSideListViewItem extends StatelessWidget {
-  const LeftSideListViewItem({super.key, required this.index});
-
-  final int index;
+  final String label;
+  final String dose;
+  final String measureUnit;
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +26,17 @@ class LeftSideListViewItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            drugInfo[index].info,
+            label,
             style: const TextStyle(
-              color: Color(0xff424242),
+              color: labelTextColor,
               fontSize: 16,
             ),
           ),
           Text(
-            '${drugInfo[index].duration.toString()}${drugInfo[index].measureUnit}',
+            '${dose} ${measureUnit}',
             style: const TextStyle(
               fontSize: 20,
+              color: Colors.black,
             ),
           ),
         ],

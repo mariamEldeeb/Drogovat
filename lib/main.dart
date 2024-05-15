@@ -1,10 +1,7 @@
 import 'package:drogovat/core/utils/colors.dart';
-import 'package:drogovat/features/drugs/presentation/views/drugs_view.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
-import 'package:drogovat/features/home/presentation/views/final_revision_view.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
-import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:drogovat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +10,8 @@ import 'package:get/get.dart';
 
 import 'core/bloc_observer.dart';
 import 'core/utils/constants.dart';
-import 'features/home/presentation/views/home_view.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -32,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeCubit()),
-        BlocProvider(create: (context) => InitPageCubit()),
+        BlocProvider(create: (context) => InitPageCubit()..getAllDrugs()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

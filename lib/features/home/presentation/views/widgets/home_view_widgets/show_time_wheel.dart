@@ -1,7 +1,9 @@
 import 'package:drogovat/core/functions/show_custom_dialog.dart';
+import 'package:drogovat/core/widgets/custom_outline_btn.dart';
 import 'package:drogovat/features/home/presentation/manager/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../core/utils/colors.dart';
 import '../../../manager/home_cubit.dart';
@@ -22,15 +24,14 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
     return BlocBuilder<HomeCubit, HomeStates>(
       builder: (context, state) {
         return InkWell(
-          onTap: (){
-            cubit.opDuration =
-            '${cubit.selectedHour} : ${cubit.selectedMinute}';
+          onTap: () {
             showCustomDialog(
               context: context,
               barrierColor: dialogBarrierColor,
               child: Container(
                 height: 400,
                 width: 550,
+                padding: EdgeInsets.only(right: 15,bottom: 15),
                 child: Stack(
                   children: [
                     Positioned(
@@ -65,7 +66,8 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                             childDelegate: ListWheelChildBuilderDelegate(
                               childCount: 13,
                               builder: (context, index) {
-                                return BuildListWheelItem(text: index.toString());
+                                return BuildListWheelItem(
+                                    text: index.toString());
                               },
                             ),
                             onSelectedItemChanged: (index) {
@@ -126,6 +128,18 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                           ),
                         ),
                       ],
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: CustomOutlineButton(
+                        text: 'Done',
+                        onTap: (){
+                          cubit.opDuration =
+                          '${cubit.selectedHour} : ${cubit.selectedMinute}';
+                          Get.back();
+                          print(cubit.opDuration);
+                        },
+                      ),
                     ),
                   ],
                 ),

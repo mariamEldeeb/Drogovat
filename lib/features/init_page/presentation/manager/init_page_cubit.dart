@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/assets.dart';
+import '../../../../core/utils/constants.dart';
 import '../../../drugs/data/models/drug_model.dart';
 import '../../../drugs/presentation/views/drugs_view.dart';
 import '../../../home/presentation/views/home_view.dart';
@@ -41,27 +42,19 @@ class InitPageCubit extends Cubit<InitPageStates> {
 
   int selectedIndex = 0;
   changeIndex(int index) {
-    if(index == 2){
-      getAllDrugs();
-    }
     selectedIndex = index;
     print(selectedIndex);
     emit(ChangePageIndexState());
   }
 
-  List<DrugModel> drugs = [];
-  void getAllDrugs(){
-    if(drugs.isEmpty){
-      FirebaseFirestore.instance
-          .collection('drugs')
-          .get()
-          .then((value){
+  void getAllDrugs() {
+    if (drugs.isEmpty) {
+      FirebaseFirestore.instance.collection('drugs').get().then((value) {
         value.docs.forEach((element) {
           drugs.add(DrugModel.fromJson(element.data()));
         });
         emit(GetAllDrugsSuccessState());
-      })
-          .catchError((error){
+      }).catchError((error) {
         print(error.toString());
         emit(GetAllDrugsErrorState(error.toString()));
       });

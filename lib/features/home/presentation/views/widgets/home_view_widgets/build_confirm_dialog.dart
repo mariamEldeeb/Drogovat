@@ -5,7 +5,6 @@ import 'package:drogovat/features/home/presentation/views/widgets/home_view_widg
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/functions/show_custom_dialog.dart';
-import '../../../../../../core/utils/styles.dart';
 import '../../../../../../core/widgets/custom_filled_btn.dart';
 import '../../../../../../core/widgets/custom_outline_btn.dart';
 

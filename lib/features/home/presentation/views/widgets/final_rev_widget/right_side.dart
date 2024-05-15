@@ -1,28 +1,19 @@
+import 'package:drogovat/core/utils/colors.dart';
+import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/title_container.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../data/models/question_model.dart';
 
 class RightSide extends StatelessWidget {
   const RightSide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<String> output = [
-      '160 cm',
-      '60 kg',
-      '21',
-      'stable',
-      'No',
-      'No',
-      'Full',
-      '02 : 00 H',
-    ];
+    var cubit = HomeCubit.get(context);
 
     return Container(
       width: 227,
       height: double.infinity,
-      margin: const EdgeInsets.only(top: 15, bottom: 20),
+      margin: const EdgeInsets.only(top: 15, bottom: 20, right: 15),
       padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -39,42 +30,84 @@ class RightSide extends StatelessWidget {
       child: Column(
         children: [
           const BuildTitle(),
-          const SizedBox(height: 25),
-          SizedBox(
-            width: 260,
-            child: ListView.separated(
-              shrinkWrap: true,
-              itemCount: ques.length,
-              itemBuilder: (context, index){
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 110,
-                      child: Text(
-                          ques[index].inputText,
-                          style: const TextStyle(
-                            color: Color(0xff424242),
-                            fontSize: 18,
-                          ),
-                        ),
-                    ),
-                    Text(
-                      output[index],
-                      style: const TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                );
-              },
-              separatorBuilder: (context, index){
-                return const SizedBox(height: 20);
-              },
+          const SizedBox(height: 20),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  buildInfoRow(
+                    label: 'Height',
+                    data: cubit.heightController.text,
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Weight',
+                    data: cubit.weightController.text,
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Age',
+                    data: cubit.ageController.text,
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Gender',
+                    data: '${cubit.selectedGender}',
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Heart State',
+                    data: '${cubit.selectedHeartState}',
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Hypertension',
+                    data: '${cubit.selectedHypertension}',
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Diabetes',
+                    data: '${cubit.selectedDiabetes}',
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Full / Half',
+                    data: '${cubit.selectedOpType}',
+                  ),
+                  SizedBox(height: 10),
+                  buildInfoRow(
+                    label: 'Period od operation',
+                    data: cubit.opDuration,
+                  ),
+                  SizedBox(height: 10),
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
+    );
+  }
+
+  Row buildInfoRow({required String label, required String data}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: 110,
+          child: Text(
+            label,
+            style: TextStyle(
+              color: labelTextColor,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        Text(
+          data,
+          style: TextStyle(color: Colors.black, fontSize: 20),
+        ),
+      ],
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utils/colors.dart';
 
 class BuildTitle extends StatelessWidget {
   const BuildTitle({super.key,});

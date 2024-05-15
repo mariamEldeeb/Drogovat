@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/colors.dart';
+import '../../../../core/utils/constants.dart';
 import '../../../../core/widgets/search_container.dart';
-import '../../data/models/drug_model.dart';
 
 class DrugsView extends StatelessWidget {
   const DrugsView({super.key});
@@ -17,8 +17,6 @@ class DrugsView extends StatelessWidget {
     return BlocConsumer<InitPageCubit, InitPageStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = InitPageCubit.get(context);
-
         return Row(
           children: [
             Expanded(
@@ -33,13 +31,12 @@ class DrugsView extends StatelessWidget {
                         shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
-                          crossAxisSpacing: 80,
-                          mainAxisSpacing: 20,
+                          crossAxisSpacing: 20,
                         ),
                         itemBuilder: (context, index) {
                           return DrugItem(index: index);
                         },
-                        itemCount: cubit.drugs.length,
+                        itemCount: drugs.length,
                       ),
                     ),
                   ],
