@@ -16,6 +16,7 @@ class HomeCubit extends Cubit<HomeStates> {
   String? selectedDiabetes = '';
   String? selectedOpType = '';
 
+  var nameController = TextEditingController();
   var heightController = TextEditingController();
   var weightController = TextEditingController();
   var ageController = TextEditingController();
@@ -24,22 +25,9 @@ class HomeCubit extends Cubit<HomeStates> {
   String selectedHour = '00';
   String selectedMinute = '00';
 
-  String selectedHeightUnit = '';
-  void changeHeightUnit(String value) {
-    selectedHeightUnit = value;
-    print(selectedHeightUnit);
-    emit(ChangeHeightUnitState());
-  }
-
-  String selectedWeightUnit = '';
-  void changeWeightUnit(String value) {
-    selectedWeightUnit = value;
-    print(selectedWeightUnit);
-    emit(ChangeWeightUnitState());
-  }
-
   void createPatient({
-    required String pId,
+    required int pId,
+    required String patientName,
     required String height,
     required String weight,
     required String age,
@@ -49,9 +37,11 @@ class HomeCubit extends Cubit<HomeStates> {
     required String diabetes,
     required String typeOfOp,
     required String periodOfOp,
+    required String drugId,
   }) {
     PatientModel pModel = PatientModel(
       pId: pId,
+      patientName: patientName,
       height: height,
       weight: weight,
       age: age,
@@ -61,22 +51,38 @@ class HomeCubit extends Cubit<HomeStates> {
       diabetes: diabetes,
       typeOfOp: typeOfOp,
       periodOfOp: periodOfOp,
+      drugId: drugId,
     );
 
     FirebaseFirestore.instance
         .collection('patients')
-        .doc(pId)
+        .doc(pId.toString())
         .set(pModel.toMap())
         .then((value) {
       emit(CreatePatientSuccessState());
-    })
-        .catchError((error) {
+    }).catchError((error) {
       print(error.toString());
       emit(CreatePatientErrorState(error.toString()));
     });
   }
 
+  List<PatientModel> patients = [];
+  void getAllPatients() {
+    if (patients.isEmpty) {
+      FirebaseFirestore.instance.collection('patients').get().then((value) {
+        value.docs.forEach((element) {
+          patients.add(PatientModel.fromJson(element.data()));
+        });
+        emit(GetAllPatientsSuccessState());
+      }).catchError((error) {
+        print(error.toString());
+        emit(GetAllPatientsErrorState(error.toString()));
+      });
+    }
+  }
+
   void onDispose() {
+    nameController.dispose();
     heightController.dispose();
     weightController.dispose();
     ageController.dispose();

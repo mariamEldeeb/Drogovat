@@ -10,6 +10,14 @@ class ChangeWeightUnitState extends HomeStates {}
 
 class CreatePatientSuccessState extends HomeStates {}
 
+class GetAllPatientsSuccessState extends HomeStates {}
+
+class GetAllPatientsErrorState extends HomeStates {
+  final String errorMessage;
+
+  GetAllPatientsErrorState(this.errorMessage);
+}
+
 class CreatePatientErrorState extends HomeStates {
   final String errorMessage;
 

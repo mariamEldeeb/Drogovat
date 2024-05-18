@@ -17,13 +17,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
-  // @override
-  // void dispose() {
-  //   HomeCubit.get(context).onDispose();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeStates>(
@@ -35,6 +28,17 @@ class _HomeViewState extends State<HomeView> {
             padding: const EdgeInsets.only(top: 23, bottom: 29),
             child: Column(
               children: [
+                QuestionItem(
+                  label: 'Name',
+                  isWeight: false,
+                  isHeight: false,
+                  isRadio: false,
+                  hintText: 'Enter patient name',
+                  controller: cubit.nameController,
+                  keyboardType: TextInputType.text,
+                  isTime: false,
+                ),
+                const SizedBox(height: 10),
                 QuestionItem(
                   label: 'Height',
                   isWeight: false,
@@ -90,7 +94,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -119,7 +123,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -161,14 +165,14 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
                             },
                           ),
-                          value: 'male',
+                          value: 'stable',
                           groupValue: cubit.selectedHeartState,
                           onChanged: (val) {
                             setState(() {
@@ -190,7 +194,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -232,7 +236,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -261,7 +265,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -303,7 +307,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -332,7 +336,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -374,7 +378,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }
@@ -403,7 +407,7 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           fillColor: MaterialStateColor.resolveWith(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.selected)) {
                                 return darkBlueColor;
                               }

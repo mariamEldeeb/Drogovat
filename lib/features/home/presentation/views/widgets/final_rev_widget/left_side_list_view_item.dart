@@ -29,7 +29,7 @@ class LeftSideListItem extends StatelessWidget {
             label,
             style: const TextStyle(
               color: labelTextColor,
-              fontSize: 16,
+              fontSize: 18,
             ),
           ),
           Text(

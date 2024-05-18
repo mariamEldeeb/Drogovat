@@ -31,7 +31,7 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
               child: Container(
                 height: 400,
                 width: 550,
-                padding: EdgeInsets.only(right: 15,bottom: 15),
+                padding: EdgeInsets.only(right: 15, bottom: 15),
                 child: Stack(
                   children: [
                     Positioned(
@@ -73,7 +73,6 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                             onSelectedItemChanged: (index) {
                               setState(() {
                                 cubit.selectedHour = index.toString();
-                                print(cubit.selectedHour);
                               });
                             },
                           ),
@@ -133,11 +132,10 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                       alignment: Alignment.bottomRight,
                       child: CustomOutlineButton(
                         text: 'Done',
-                        onTap: (){
+                        onTap: () {
                           cubit.opDuration =
-                          '${cubit.selectedHour} : ${cubit.selectedMinute}';
+                              '${cubit.selectedHour} : ${cubit.selectedMinute}';
                           Get.back();
-                          print(cubit.opDuration);
                         },
                       ),
                     ),

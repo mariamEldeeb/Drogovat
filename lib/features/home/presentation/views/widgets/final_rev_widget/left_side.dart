@@ -1,9 +1,9 @@
-import 'package:drogovat/core/functions/navigate.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/core/widgets/drug_image_container.dart';
 import 'package:drogovat/core/widgets/large_button.dart';
 import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../core/utils/constants.dart';
 import 'left_side_list_view_item.dart';
@@ -53,7 +53,6 @@ class LeftSide extends StatelessWidget {
                   const SizedBox(height: 15),
                   Text(
                     '${drugs[1].drugName}',
-                    // 'name',
                     style: TextStyle(
                       color: Color(0xff9C0000),
                       fontSize: 27,
@@ -92,10 +91,23 @@ class LeftSide extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 15),
-          Text(
-            'a ${drugs[1].drugFullAmount} ml of apparent anesthetic has been added in the pump ',
-            style: TextStyle(
-              fontSize: 20,
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                    text: 'a ',
+                    style: TextStyle(color: Colors.black, fontSize: 20)),
+                TextSpan(
+                    text: '${drugs[1].drugFullAmount}',
+                    style: TextStyle(
+                        color: Color(0xffA80707),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                TextSpan(
+                    text:
+                        ' ml of apparent anesthetic has been added in the pump',
+                    style: TextStyle(color: Colors.black, fontSize: 20)),
+              ],
             ),
           ),
           const Spacer(),
@@ -105,7 +117,7 @@ class LeftSide extends StatelessWidget {
             text: 'Start Operation',
             color: gradiantGreenColor,
             onTap: () {
-              navigateTo(const MonitorView());
+              Get.to(() => MonitorView());
             },
           ),
         ],

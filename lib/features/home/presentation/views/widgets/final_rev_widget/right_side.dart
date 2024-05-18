@@ -13,8 +13,8 @@ class RightSide extends StatelessWidget {
     return Container(
       width: 227,
       height: double.infinity,
-      margin: const EdgeInsets.only(top: 15, bottom: 20, right: 15),
-      padding: const EdgeInsets.all(25),
+      margin: const EdgeInsets.only(top: 15, bottom: 20, right: 10),
+      padding: const EdgeInsets.only(top: 25, bottom: 25, left: 20, right: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -94,12 +94,12 @@ class RightSide extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
-          width: 110,
+          width: 115,
           child: Text(
             label,
             style: TextStyle(
               color: labelTextColor,
-              fontSize: 20,
+              fontSize: 19.5,
             ),
           ),
         ),

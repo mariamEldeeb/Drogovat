@@ -12,7 +12,6 @@ const String warningSign = 'assets/icons/warning_sign.png';
 const String addDrugIcon = 'assets/icons/add_drug_icon.png';
 
 // images
-const String drugImage = 'assets/images/drug_image.png';
 const String Drug1Image = 'assets/images/drug1.png';
 const String Drug2Image = 'assets/images/drug2.png';
 const String Drug3Image = 'assets/images/drug3.png';

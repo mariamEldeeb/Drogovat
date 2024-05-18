@@ -45,8 +45,6 @@ class QuestionItem extends StatelessWidget {
         CustomInputContainer(
           controller: controller,
           isRadio: isRadio,
-          isHeight: isHeight,
-          isWeight: isWeight,
           hintText: hintText,
           keyboardType: keyboardType,
           radio: radio,

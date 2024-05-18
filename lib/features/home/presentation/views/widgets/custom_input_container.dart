@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'custom_text_form_field.dart';
-import 'home_view_widgets/measure_unit.dart';
 
 class CustomInputContainer extends StatelessWidget {
   CustomInputContainer({
     super.key,
     required this.isRadio,
-    required this.isHeight,
-    required this.isWeight,
     this.hintText,
     this.controller,
     this.keyboardType,
@@ -19,8 +16,6 @@ class CustomInputContainer extends StatelessWidget {
   });
 
   final bool isRadio;
-  final bool isHeight;
-  final bool isWeight;
   final TextEditingController? controller;
   final String? hintText;
   final TextInputType? keyboardType;
@@ -43,29 +38,10 @@ class CustomInputContainer extends StatelessWidget {
             ),
             child: isRadio == true
                 ? radio
-                : Row(
-                    children: [
-                      Expanded(
-                        child: CustomTextFormField(
-                          controller: controller,
-                          hintText: hintText,
-                          keyboardType: keyboardType,
-                        ),
-                      ),
-                      if (isHeight == true)
-                        const MeasureUnit(
-                          measureUnitText: ['cm', 'inches', 'feet'],
-                          index: 0,
-                        )
-                      else if (isWeight == true)
-                        const MeasureUnit(
-                          measureUnitText: ['kg', 'pound'],
-                          index: 1,
-                        )
-                      else
-                        const SizedBox(),
-                      const SizedBox(width: 35),
-                    ],
+                : CustomTextFormField(
+                    controller: controller,
+                    hintText: hintText,
+                    keyboardType: keyboardType,
                   ),
           );
   }

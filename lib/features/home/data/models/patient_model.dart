@@ -1,7 +1,6 @@
-// import 'package:drogovat/features/drugs/data/models/drug_model.dart';
-
 class PatientModel {
-  String? pId;
+  int? pId;
+  String? patientName;
   String? height;
   String? weight;
   String? age;
@@ -11,7 +10,7 @@ class PatientModel {
   String? diabetes;
   String? typeOfOp;
   String? periodOfOp;
-  // DrugModel? drug;
+  String? drugId;
   // String? heartRate;
   // String? bloodPressure;
   // String? rasRate;
@@ -22,6 +21,7 @@ class PatientModel {
 
   PatientModel({
     this.pId,
+    this.patientName,
     this.height,
     this.weight,
     this.age,
@@ -31,19 +31,21 @@ class PatientModel {
     this.diabetes,
     this.typeOfOp,
     this.periodOfOp,
+    this.drugId,
   }
       // this.drug,
-    // this.heartRate,
-    // this.bloodPressure,
-    // this.rasRate,
-    // this.OxygenSaturation,
-    // this.endTidalCarbon,
-    // this.temp,
-    // this.Electrocardiogram,
-  );
+      // this.heartRate,
+      // this.bloodPressure,
+      // this.rasRate,
+      // this.OxygenSaturation,
+      // this.endTidalCarbon,
+      // this.temp,
+      // this.Electrocardiogram,
+      );
 
   PatientModel.fromJson(Map<String, dynamic> json) {
     pId = json['pId'];
+    patientName = json['patientName'];
     height = json['height'];
     weight = json['weight'];
     age = json['age'];
@@ -53,7 +55,7 @@ class PatientModel {
     diabetes = json['diabetes'];
     typeOfOp = json['typeOfOp'];
     periodOfOp = json['periodOfOp'];
-    // drug = json['drug'];
+    drugId = json['drugId'];
     // heartRate = json['heartRate'];
     // bloodPressure = json['bloodPressure'];
     // rasRate = json['rasRate'];
@@ -66,6 +68,7 @@ class PatientModel {
   Map<String, dynamic> toMap() {
     return {
       'pId': pId,
+      'patientName': patientName,
       'height': height,
       'weight': weight,
       'age': age,
@@ -75,7 +78,7 @@ class PatientModel {
       'diabetes': diabetes,
       'typeOfOp': typeOfOp,
       'periodOfOp': periodOfOp,
-      // 'drug': drug,
+      'drugId': drugId,
       // 'heartRate': heartRate,
       // 'bloodPressure': bloodPressure,
       // 'rasRate': rasRate,

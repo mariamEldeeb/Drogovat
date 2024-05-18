@@ -20,6 +20,10 @@ buildConfirmDialog(BuildContext context) {
         mainAxisSize: MainAxisSize.min,
         children: [
           ConfirmItem(
+            label: 'Name',
+            outputText: cubit.nameController.text,
+          ),
+          ConfirmItem(
             label: 'Height',
             outputText: cubit.heightController.text,
           ),
@@ -71,21 +75,9 @@ buildConfirmDialog(BuildContext context) {
                 text: 'Confirm',
                 textColor: Colors.white,
                 onTap: () {
-                  cubit.createPatient(
-                    pId: '1',
-                    height: cubit.heightController.text,
-                    weight: cubit.weightController.text,
-                    age: cubit.ageController.text,
-                    gender: cubit.selectedGender ?? '',
-                    heartState: cubit.selectedHeartState ?? '',
-                    hypertension: cubit.selectedHypertension ?? '',
-                    diabetes: cubit.selectedDiabetes ?? '',
-                    typeOfOp: cubit.selectedOpType ?? '',
-                    periodOfOp: cubit.opDuration,
-                   );
                   showCustomDialog(
                     context: context,
-                    child: buildDrugDialog(),
+                    child: buildDrugDialog(context),
                     barrierColor: dialogBarrierColor,
                   );
                 },
