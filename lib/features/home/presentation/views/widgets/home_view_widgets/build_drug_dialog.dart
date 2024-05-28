@@ -86,6 +86,13 @@ buildDrugDialog(BuildContext context) {
                   typeOfOp: HomeCubit.get(context).selectedOpType ?? '',
                   periodOfOp: HomeCubit.get(context).opDuration,
                   drugId: 'drug2',
+                  temp: '',
+                  endTidalCarbon: '',
+                  rasRate: '',
+                  heartRate: '',
+                  bloodPressure: '',
+                  electrocardiogram: '',
+                  oxSaturation: '',
                 );
                 navigateTo(const FinalRevisionView());
               },

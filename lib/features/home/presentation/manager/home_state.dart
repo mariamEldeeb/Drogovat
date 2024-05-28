@@ -4,11 +4,17 @@ class HomeInitialState extends HomeStates {}
 
 class ChangeIndexState extends HomeStates {}
 
-class ChangeHeightUnitState extends HomeStates {}
-
-class ChangeWeightUnitState extends HomeStates {}
-
 class CreatePatientSuccessState extends HomeStates {}
+
+class GetPatientDataLoadingState extends HomeStates {}
+
+class GetPatientDataSuccessState extends HomeStates {}
+
+class GetPatientDataErrorState extends HomeStates {
+  final String errorMessage;
+
+  GetPatientDataErrorState(this.errorMessage);
+}
 
 class GetAllPatientsSuccessState extends HomeStates {}
 
@@ -22,4 +28,12 @@ class CreatePatientErrorState extends HomeStates {
   final String errorMessage;
 
   CreatePatientErrorState(this.errorMessage);
+}
+
+class UpdatePatientWithVitalsSuccessState extends HomeStates {}
+
+class UpdatePatientWithVitalsErrorState extends HomeStates {
+  final String errorMessage;
+
+  UpdatePatientWithVitalsErrorState(this.errorMessage);
 }

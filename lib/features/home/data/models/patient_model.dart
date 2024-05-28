@@ -1,6 +1,8 @@
 class PatientModel {
   int? pId;
   String? patientName;
+  String? patientStatus;
+  String? opName;
   String? height;
   String? weight;
   String? age;
@@ -11,17 +13,19 @@ class PatientModel {
   String? typeOfOp;
   String? periodOfOp;
   String? drugId;
-  // String? heartRate;
-  // String? bloodPressure;
-  // String? rasRate;
-  // String? OxygenSaturation;
-  // String? endTidalCarbon;
-  // String? temp;
-  // String? Electrocardiogram;
+  String? heartRate;
+  String? bloodPressure;
+  String? rasRate;
+  String? oxSaturation;
+  String? endTidalCarbon;
+  String? temp;
+  String? electrocardiogram;
 
   PatientModel({
     this.pId,
     this.patientName,
+    this.patientStatus,
+    this.opName,
     this.height,
     this.weight,
     this.age,
@@ -32,20 +36,20 @@ class PatientModel {
     this.typeOfOp,
     this.periodOfOp,
     this.drugId,
-  }
-      // this.drug,
-      // this.heartRate,
-      // this.bloodPressure,
-      // this.rasRate,
-      // this.OxygenSaturation,
-      // this.endTidalCarbon,
-      // this.temp,
-      // this.Electrocardiogram,
-      );
+    this.heartRate,
+    this.bloodPressure,
+    this.rasRate,
+    this.oxSaturation,
+    this.endTidalCarbon,
+    this.temp,
+    this.electrocardiogram,
+  });
 
   PatientModel.fromJson(Map<String, dynamic> json) {
-    pId = json['pId'];
+    pId = json['pId'] is int ? json['pId'] : int.parse(json['pId']);
     patientName = json['patientName'];
+    patientStatus = json['patientStatus'];
+    opName = json['opName'];
     height = json['height'];
     weight = json['weight'];
     age = json['age'];
@@ -56,19 +60,21 @@ class PatientModel {
     typeOfOp = json['typeOfOp'];
     periodOfOp = json['periodOfOp'];
     drugId = json['drugId'];
-    // heartRate = json['heartRate'];
-    // bloodPressure = json['bloodPressure'];
-    // rasRate = json['rasRate'];
-    // OxygenSaturation = json['OxygenSaturation'];
-    // endTidalCarbon = json['endTidalCarbon'];
-    // temp = json['temp'];
-    // Electrocardiogram = json['Electrocardiogram'];
+    heartRate = json['heartRate'];
+    bloodPressure = json['bloodPressure'];
+    rasRate = json['rasRate'];
+    oxSaturation = json['oxSaturation'];
+    endTidalCarbon = json['endTidalCarbon'];
+    temp = json['temp'];
+    electrocardiogram = json['electrocardiogram'];
   }
 
   Map<String, dynamic> toMap() {
     return {
       'pId': pId,
       'patientName': patientName,
+      'patientStatus': patientStatus,
+      'opName': opName,
       'height': height,
       'weight': weight,
       'age': age,
@@ -79,13 +85,13 @@ class PatientModel {
       'typeOfOp': typeOfOp,
       'periodOfOp': periodOfOp,
       'drugId': drugId,
-      // 'heartRate': heartRate,
-      // 'bloodPressure': bloodPressure,
-      // 'rasRate': rasRate,
-      // 'OxygenSaturation': OxygenSaturation,
-      // 'endTidalCarbon': endTidalCarbon,
-      // 'temp': temp,
-      // 'Electrocardiogram': Electrocardiogram,
+      'heartRate': heartRate,
+      'bloodPressure': bloodPressure,
+      'rasRate': rasRate,
+      'oxSaturation': oxSaturation,
+      'endTidalCarbon': endTidalCarbon,
+      'temp': temp,
+      'electrocardiogram': electrocardiogram,
     };
   }
 }

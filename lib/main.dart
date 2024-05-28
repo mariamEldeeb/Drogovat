@@ -1,7 +1,9 @@
+import 'package:drogovat/core/cache_helper.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
+import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
 import 'package:drogovat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Bloc.observer = MyBlocObserver();
+  await CacheHelper.init();
   runApp(const MyApp());
 }
 
@@ -27,8 +30,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => HomeCubit()..getAllPatients()),
         BlocProvider(create: (context) => InitPageCubit()..getAllDrugs()),
+        BlocProvider(create: (context) => HomeCubit()..getAllPatients()),
+        BlocProvider(create: (context) => MonitorCubit()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

@@ -51,10 +51,12 @@ class DoseInfoContainer extends StatelessWidget {
                 barrierColor: warningDialogBarrierColor,
               );
             },
-            child: Container(
-              color: Colors.white,
-              width: 15,
-              height: 15,
+            child: Text(
+              'End',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
             ),
           )
         ],

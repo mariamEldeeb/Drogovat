@@ -6,13 +6,11 @@ class VitalListViewItem extends StatelessWidget {
     required this.vitalText,
     required this.vitalValue,
     required this.color,
-    required this.index,
   });
 
   final String vitalText;
   final String vitalValue;
   final Color color;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +24,7 @@ class VitalListViewItem extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        const SizedBox(
-          width: 10,
-        ),
+        const SizedBox(width: 10),
         Text(
           vitalValue,
           style: TextStyle(

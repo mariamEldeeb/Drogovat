@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:drogovat/core/cache_helper.dart';
+import 'package:drogovat/core/utils/constants.dart';
 import 'package:drogovat/features/home/data/models/patient_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +11,8 @@ class HomeCubit extends Cubit<HomeStates> {
   HomeCubit() : super(HomeInitialState());
 
   static HomeCubit get(context) => BlocProvider.of(context);
+
+  PatientModel? patientModel;
 
   String? selectedGender = '';
   String? selectedHeartState = '';
@@ -38,6 +42,13 @@ class HomeCubit extends Cubit<HomeStates> {
     required String typeOfOp,
     required String periodOfOp,
     required String drugId,
+    String heartRate = '',
+    String bloodPressure = '',
+    String rasRate = '',
+    String oxSaturation = '',
+    String electrocardiogram = '',
+    String endTidalCarbon = '',
+    String temp = '',
   }) {
     PatientModel pModel = PatientModel(
       pId: pId,
@@ -52,13 +63,21 @@ class HomeCubit extends Cubit<HomeStates> {
       typeOfOp: typeOfOp,
       periodOfOp: periodOfOp,
       drugId: drugId,
+      heartRate: heartRate,
+      bloodPressure: bloodPressure,
+      rasRate: rasRate,
+      oxSaturation: oxSaturation,
+      electrocardiogram: electrocardiogram,
+      endTidalCarbon: endTidalCarbon,
+      temp: temp,
     );
 
     FirebaseFirestore.instance
-        .collection('patients')
+        .collection(patientCollection)
         .doc(pId.toString())
         .set(pModel.toMap())
         .then((value) {
+      CacheHelper.saveData(key: 'pId', value: pId);
       emit(CreatePatientSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -66,25 +85,62 @@ class HomeCubit extends Cubit<HomeStates> {
     });
   }
 
+  // void getPatientData() {
+  //   emit(GetPatientDataLoadingState());
+  //
+  //   FirebaseFirestore.instance
+  //       .collection(patientCollection)
+  //       .doc(globalPatientId)
+  //       .get()
+  //       .then((value) {
+  //     patientModel = PatientModel.fromJson(value.data()!);
+  //     emit(GetPatientDataSuccessState());
+  //   }).catchError((error) {
+  //     print(error.toString());
+  //     emit(GetPatientDataErrorState(error));
+  //   });
+  // }
+
   List<PatientModel> patients = [];
   void getAllPatients() {
-    if (patients.isEmpty) {
-      FirebaseFirestore.instance.collection('patients').get().then((value) {
-        value.docs.forEach((element) {
-          patients.add(PatientModel.fromJson(element.data()));
-        });
-        emit(GetAllPatientsSuccessState());
-      }).catchError((error) {
-        print(error.toString());
-        emit(GetAllPatientsErrorState(error.toString()));
+    FirebaseFirestore.instance
+        .collection(patientCollection)
+        .get()
+        .then((value) {
+      value.docs.forEach((element) {
+        patients.add(PatientModel.fromJson(element.data()));
       });
-    }
+      emit(GetAllPatientsSuccessState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(GetAllPatientsErrorState(error.toString()));
+    });
   }
 
-  void onDispose() {
-    nameController.dispose();
-    heightController.dispose();
-    weightController.dispose();
-    ageController.dispose();
+  void updatePatientWithVitals({
+    required String heartRate,
+    required String bloodPressure,
+    required String rasRate,
+    required String oxSaturation,
+    required String electrocardiogram,
+    required String endTidalCarbon,
+    required String temp,
+  }) {
+    FirebaseFirestore.instance
+        .collection(patientCollection)
+        .doc('${globalPatientId}')
+        .update({
+      'heartRate': heartRate,
+      'bloodPressure': bloodPressure,
+      'rasRate': rasRate,
+      'oxSaturation': oxSaturation,
+      'endTidalCarbon': endTidalCarbon,
+      'temp': temp,
+      'electrocardiogram': electrocardiogram,
+    }).then((value) {
+      emit(UpdatePatientWithVitalsSuccessState());
+    }).catchError((error) {
+      emit((UpdatePatientWithVitalsErrorState(error)));
+    });
   }
 }

@@ -49,7 +49,10 @@ class InitPageCubit extends Cubit<InitPageStates> {
 
   void getAllDrugs() {
     if (drugs.isEmpty) {
-      FirebaseFirestore.instance.collection('drugs').get().then((value) {
+      FirebaseFirestore.instance
+          .collection(drugsCollection)
+          .get()
+          .then((value) {
         value.docs.forEach((element) {
           drugs.add(DrugModel.fromJson(element.data()));
         });

@@ -13,6 +13,7 @@ const Color greenTextOnButtonColor = Color(0xffA9FF80);
 const Color monitorBgColor = Color(0xff0A0F22);
 const Color containerBorderColor = Color(0xff0E6ABF);
 const Color drugItemConColor = Color(0xffC4C4C4);
+const Color MonitorContainersColor = const Color(0xFF0E6ABF);
 Color lightDigitalNumColor = const Color(0xffAFAFAF).withOpacity(0.10000000);
 Color dialogBarrierColor = const Color(0xffA5A4A4).withOpacity(0.5);
 Color warningDialogBarrierColor = const Color(0xff04060E).withOpacity(0.8);
