@@ -21,7 +21,7 @@ buildDrugDialog(BuildContext context) {
           children: [
             DrugImageContainer(
               bgColor: drugItemConColor,
-              imagePath: '${drugs[1].drugImage}',
+              imagePath: '${drugs[2].drugImage}',
               width: 197,
               height: 200,
             ),
@@ -45,7 +45,7 @@ buildDrugDialog(BuildContext context) {
                             style:
                                 TextStyle(color: Colors.black, fontSize: 20)),
                         TextSpan(
-                            text: '${drugs[1].drugFullAmount}',
+                            text: '${drugs[2].drugFullAmount}',
                             style: TextStyle(
                                 color: Color(0xffA80707),
                                 fontSize: 20,
@@ -85,7 +85,7 @@ buildDrugDialog(BuildContext context) {
                   diabetes: HomeCubit.get(context).selectedDiabetes ?? '',
                   typeOfOp: HomeCubit.get(context).selectedOpType ?? '',
                   periodOfOp: HomeCubit.get(context).opDuration,
-                  drugId: 'drug2',
+                  drugId: 'drug3',
                   temp: '',
                   endTidalCarbon: '',
                   rasRate: '',

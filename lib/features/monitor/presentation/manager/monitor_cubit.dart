@@ -6,13 +6,11 @@ class MonitorCubit extends Cubit<MonitorStates> {
 
   static MonitorCubit get(context) => BlocProvider.of(context);
 
-  String heartRate = '120 / 80';
-  String bloodPressure = '88 - 89';
-  String rasRate = '12 - 20';
-  String oxSaturation = '94';
-  String endTidalCarbon = '35';
-  String temp = '37';
-  String electrocardiogram = '75';
-
-  void saveVitalData() {}
+  String heartRate = '60 / 85';
+  String bloodPressure = '60 - 105';
+  String rasRate = '30 - 50';
+  String oxSaturation = '95';
+  String endTidalCarbon = '45';
+  String temp = '38';
+  String electrocardiogram = '71';
 }

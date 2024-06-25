@@ -2,8 +2,8 @@ import 'package:drogovat/core/cache_helper.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
-import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
 import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
+import 'package:drogovat/features/splash/presentation/views/splash_view.dart';
 import 'package:drogovat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 import 'core/bloc_observer.dart';
-import 'core/utils/constants.dart';
+import 'core/utils/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         getPages: pages,
-        home: const InitPageView(),
+        home: const SplashView(),
       ),
     );
   }

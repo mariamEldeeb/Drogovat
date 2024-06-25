@@ -64,7 +64,7 @@ buildWarningDialog(BuildContext context) {
                   endTidalCarbon: monitorCubit.endTidalCarbon,
                   temp: monitorCubit.temp,
                 );
-                navigateOffAllTo(const HomeView());
+                navigateTo(const HomeView());
               },
             ),
           ],
