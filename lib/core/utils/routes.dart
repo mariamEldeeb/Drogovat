@@ -11,9 +11,9 @@ import '../../features/settings/presentation/views/settings_view.dart';
 List<GetPage<dynamic>>? pages = [
   GetPage(name: '/', page: () => const SplashView()),
   GetPage(name: '/initPage', page: () => const InitPageView()),
+  GetPage(name: '/homeView', page: () => const HomeView()),
   GetPage(name: '/finalRevision', page: () => const FinalRevisionView()),
   GetPage(name: '/monitorView', page: () => const MonitorView()),
   GetPage(name: '/drugsView', page: () => const DrugsView()),
-  GetPage(name: '/homeView', page: () => const HomeView()),
   GetPage(name: '/settingsView', page: () => const SettingsView()),
 ];

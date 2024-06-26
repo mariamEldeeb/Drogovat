@@ -16,6 +16,7 @@ class Background extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
               child: SvgPicture.asset(
                 splashBG,
                 fit: BoxFit.fill,

@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 
 import 'core/bloc_observer.dart';
 import 'core/utils/routes.dart';
+import 'device_info.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,23 +29,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => InitPageCubit()..getAllDrugs()),
-        BlocProvider(create: (context) => HomeCubit()..getAllPatients()),
-        BlocProvider(create: (context) => MonitorCubit()),
-      ],
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: darkBlueColor)
-              .copyWith(background: backgroundColor),
-          fontFamily: 'Imprima',
+    return Builder(builder: (context) {
+      DeviceInfo.initialize(context);
+      return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => InitPageCubit()..getAllDrugs()),
+          BlocProvider(create: (context) => HomeCubit()..getAllPatients()),
+          BlocProvider(create: (context) => MonitorCubit()),
+        ],
+        child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: darkBlueColor)
+                .copyWith(background: backgroundColor),
+            fontFamily: 'Imprima',
+          ),
+          initialRoute: '/',
+          getPages: pages,
+          home: const SplashView(),
         ),
-        initialRoute: '/',
-        getPages: pages,
-        home: const SplashView(),
-      ),
-    );
+      );
+    });
   }
 }

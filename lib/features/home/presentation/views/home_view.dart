@@ -19,10 +19,11 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    var cubit = HomeCubit.get(context);
+
     return BlocConsumer<HomeCubit, HomeStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = HomeCubit.get(context);
         return SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 23, bottom: 29),
@@ -44,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: false,
                   isHeight: true,
                   isRadio: false,
-                  hintText: '000',
+                  hintText: 'Note: height in cm',
                   controller: cubit.heightController,
                   keyboardType: TextInputType.number,
                   isTime: false,
@@ -55,7 +56,7 @@ class _HomeViewState extends State<HomeView> {
                   isWeight: true,
                   isHeight: false,
                   isRadio: false,
-                  hintText: '000',
+                  hintText: 'Note: weight in kg',
                   controller: cubit.weightController,
                   keyboardType: TextInputType.number,
                   isTime: false,
@@ -357,82 +358,10 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 const SizedBox(height: 10),
                 QuestionItem(
-                  label: 'Full  /  Half',
-                  isWeight: false,
-                  isHeight: false,
-                  isRadio: true,
-                  isTime: false,
-                  radio: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 200,
-                        child: RadioListTile(
-                          title: Text(
-                            'Full',
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: darkBlueColor,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
-                                return darkBlueColor;
-                              }
-                              return Colors.black45;
-                            },
-                          ),
-                          value: 'full',
-                          groupValue: cubit.selectedOpType,
-                          onChanged: (val) {
-                            setState(() {
-                              cubit.selectedOpType = val;
-                            });
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: RadioListTile(
-                          title: Text(
-                            'Half',
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: darkBlueColor,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
-                                return darkBlueColor;
-                              }
-                              return Colors.black45;
-                            },
-                          ),
-                          value: 'half',
-                          groupValue: cubit.selectedOpType,
-                          onChanged: (val) {
-                            setState(() {
-                              cubit.selectedOpType = val;
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 10),
-                QuestionItem(
                   label: 'Period of operation',
                   isWeight: false,
                   isHeight: false,
                   isRadio: false,
-                  keyboardType: TextInputType.number,
                   isTime: true,
                 ),
                 const SizedBox(height: 20),
@@ -455,5 +384,15 @@ class _HomeViewState extends State<HomeView> {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    var cubit = HomeCubit.get(context);
+    cubit.nameController.dispose();
+    cubit.heightController.dispose();
+    cubit.weightController.dispose();
+    cubit.ageController.dispose();
+    super.dispose();
   }
 }

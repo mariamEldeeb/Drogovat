@@ -67,7 +67,8 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                               childCount: 13,
                               builder: (context, index) {
                                 return BuildListWheelItem(
-                                    text: index.toString());
+                                  text: index.toString(),
+                                );
                               },
                             ),
                             onSelectedItemChanged: (index) {
@@ -77,11 +78,13 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                             },
                           ),
                         ),
-                        // Text(
-                        //   'hr',
-                        //   style: TextStyle(
-                        //       fontSize: 40, fontWeight: FontWeight.bold),
-                        // ),
+                        Text(
+                          'hr',
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
@@ -131,10 +134,13 @@ class _ShowTimeWheelState extends State<ShowTimeWheel> {
                             },
                           ),
                         ), // Text(
-                        //   'min',
-                        //   style: TextStyle(
-                        //       fontSize: 40, fontWeight: FontWeight.bold),
-                        // ),
+                        Text(
+                          'min',
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                     Align(

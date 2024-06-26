@@ -43,7 +43,6 @@ class InitPageCubit extends Cubit<InitPageStates> {
   int selectedIndex = 0;
   changeIndex(int index) {
     selectedIndex = index;
-    print(selectedIndex);
     emit(ChangePageIndexState());
   }
 

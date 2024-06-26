@@ -1,3 +1,4 @@
+import 'package:drogovat/device_info.dart';
 import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
 import 'package:drogovat/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
@@ -38,8 +39,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
         children: [
           Image.asset(
             logoName,
-            width: MediaQuery.of(context).size.width / 2.5,
-            height: MediaQuery.of(context).size.height / 6,
+            width: DeviceInfo.isTablet
+                ? MediaQuery.of(context).size.width / 2.5
+                : MediaQuery.of(context).size.width / 1.5,
+            height: DeviceInfo.isTablet
+                ? MediaQuery.of(context).size.height / 6
+                : null,
           ),
           const SizedBox(height: 10),
           SlidingText(slidingAnimation: slidingAnimation),
