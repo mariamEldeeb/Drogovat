@@ -46,6 +46,7 @@ class InitPageCubit extends Cubit<InitPageStates> {
     emit(ChangePageIndexState());
   }
 
+  ///////////////// FireBase ////////////////////////
   void getAllDrugs() {
     if (drugs.isEmpty) {
       FirebaseFirestore.instance
