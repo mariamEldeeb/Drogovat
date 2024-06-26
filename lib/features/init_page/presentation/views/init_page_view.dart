@@ -1,7 +1,7 @@
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_state.dart';
-import 'package:drogovat/features/init_page/presentation/views/mobile_layout.dart';
-import 'package:drogovat/features/init_page/presentation/views/tab_layout.dart';
+import 'package:drogovat/features/init_page/presentation/views/init_mobile_layout.dart';
+import 'package:drogovat/features/init_page/presentation/views/init_tab_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

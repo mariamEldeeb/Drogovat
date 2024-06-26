@@ -1,5 +1,5 @@
-import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/left_side.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/right_side.dart';
+import 'package:drogovat/features/home/presentation/views/tab_widgets/final_rev_widget/left_side.dart';
+import 'package:drogovat/features/home/presentation/views/tab_widgets/final_rev_widget/right_side.dart';
 import 'package:flutter/material.dart';
 
 class FinalRevisionView extends StatelessWidget {

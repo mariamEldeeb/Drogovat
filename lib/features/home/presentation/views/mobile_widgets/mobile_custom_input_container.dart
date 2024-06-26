@@ -1,11 +1,10 @@
-import 'package:drogovat/features/home/presentation/views/widgets/home_view_widgets/show_time_wheel.dart';
+import 'package:drogovat/features/home/presentation/views/mobile_widgets/show_mobile_time_wheel.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/colors.dart';
-import 'custom_text_form_field.dart';
+import 'mobile_custom_text_field.dart';
 
-class CustomInputContainer extends StatelessWidget {
-  CustomInputContainer({
+class MobileCustomInputContainer extends StatelessWidget {
+  MobileCustomInputContainer({
     super.key,
     required this.isRadio,
     this.hintText,
@@ -24,21 +23,12 @@ class CustomInputContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
-
     return isTime
-        ? ShowTimeWheel()
+        ? ShowMobileTimeWheel()
         : Container(
-            width: w / 1.4,
-            height: h / 11,
-            decoration: BoxDecoration(
-              color: textFormFiledColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
             child: isRadio == true
                 ? radio
-                : CustomTextFormField(
+                : MobileCustomTextFormField(
                     controller: controller,
                     hintText: hintText,
                     keyboardType: keyboardType,

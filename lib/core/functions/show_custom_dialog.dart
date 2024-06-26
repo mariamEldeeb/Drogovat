@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../features/home/presentation/views/widgets/custom_dialog.dart';
+import '../../features/home/presentation/views/tab_widgets/custom_dialog.dart';
 
 Future<Object?> showCustomDialog({
   required BuildContext context,

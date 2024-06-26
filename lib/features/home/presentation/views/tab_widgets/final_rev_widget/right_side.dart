@@ -1,6 +1,6 @@
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
-import 'package:drogovat/features/home/presentation/views/widgets/final_rev_widget/title_container.dart';
+import 'package:drogovat/features/home/presentation/views/tab_widgets/final_rev_widget/title_container.dart';
 import 'package:flutter/material.dart';
 
 class RightSide extends StatelessWidget {
