@@ -2,8 +2,8 @@ import 'package:drogovat/core/cache_helper.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
+import 'package:drogovat/features/init_page/presentation/views/init_page_view.dart';
 import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
-import 'package:drogovat/features/splash/presentation/views/splash_view.dart';
 import 'package:drogovat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           getPages: pages,
-          home: const SplashView(),
+          home: const InitPageView(),
         ),
       );
     });

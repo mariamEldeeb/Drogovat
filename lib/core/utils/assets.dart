@@ -18,6 +18,7 @@ const String Drug3Image = 'assets/images/drug3.png';
 const String Drug4Image = 'assets/images/drug4.png';
 const String splashBG = 'assets/images/splash_bg.svg';
 const String logoName = 'assets/images/logo_name.png';
+const String fadeLogo = 'assets/images/fade_logo.png';
 
 // vital sign icon
 const String BPIcon = 'assets/icons/BP_icon.png';
