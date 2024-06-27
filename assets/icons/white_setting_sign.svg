@@ -1,8 +1,16 @@
-<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="14.0122" y="0.986842" width="1.97368" height="28.0263" stroke="white" stroke-width="1.97368"/>
-<rect x="24.21" y="4.39341" width="1.97368" height="28.0263" transform="rotate(45 24.21 4.39341)" stroke="white" stroke-width="1.97368"/>
-<rect x="4.39268" y="5.78906" width="1.97368" height="28.0263" transform="rotate(-45 4.39268 5.78906)" stroke="white" stroke-width="1.97368"/>
-<rect x="0.986842" y="15.9868" width="1.97368" height="28.0263" transform="rotate(-90 0.986842 15.9868)" stroke="white" stroke-width="1.97368"/>
-<path d="M25 14.844C25 20.3668 20.5228 24.844 15 24.844C9.47715 24.844 5 20.3668 5 14.844C5 9.32115 9.47715 4.84399 15 4.84399C20.5228 4.84399 25 9.32115 25 14.844Z" fill="#0A0F22" stroke="white" stroke-width="2"/>
-<path d="M21 14.844C21 18.1577 18.3137 20.844 15 20.844C11.6863 20.844 9 18.1577 9 14.844C9 11.5303 11.6863 8.84399 15 8.84399C18.3137 8.84399 21 11.5303 21 14.844Z" fill="#0A0F22" stroke="white" stroke-width="2"/>
+<svg fill="none" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+    <rect height="28.0263" stroke="white" stroke-width="1.97368" width="1.97368" x="14.0122"
+        y="0.986842" />
+    <rect height="28.0263" stroke="white" stroke-width="1.97368" transform="rotate(45 24.21 4.39341)"
+        width="1.97368" x="24.21" y="4.39341" />
+    <rect height="28.0263" stroke="white" stroke-width="1.97368" transform="rotate(-45 4.39268 5.78906)"
+        width="1.97368" x="4.39268" y="5.78906" />
+    <rect height="28.0263" stroke="white" stroke-width="1.97368" transform="rotate(-90 0.986842 15.9868)"
+        width="1.97368" x="0.986842" y="15.9868" />
+    <path
+        d="M25 14.844C25 20.3668 20.5228 24.844 15 24.844C9.47715 24.844 5 20.3668 5 14.844C5 9.32115 9.47715 4.84399 15 4.84399C20.5228 4.84399 25 9.32115 25 14.844Z"
+        fill="#0A0F22" stroke="white" stroke-width="2" />
+    <path
+        d="M21 14.844C21 18.1577 18.3137 20.844 15 20.844C11.6863 20.844 9 18.1577 9 14.844C9 11.5303 11.6863 8.84399 15 8.84399C18.3137 8.84399 21 11.5303 21 14.844Z"
+        fill="#0A0F22" stroke="white" stroke-width="2" />
 </svg>

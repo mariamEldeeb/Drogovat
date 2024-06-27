@@ -1,13 +1,13 @@
 import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
 import 'package:drogovat/features/monitor/presentation/manager/monitor_states.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/vital_list_view_item.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_widgets/vital_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 
-class VitalSignContainer extends StatelessWidget {
-  const VitalSignContainer({
+class TabVitalSignContainer extends StatelessWidget {
+  const TabVitalSignContainer({
     super.key,
   });
 

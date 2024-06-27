@@ -1,3 +1,4 @@
+import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/functions/navigate.dart';
@@ -6,7 +7,6 @@ import '../../../../../core/utils/constants.dart';
 import '../../../../../core/widgets/custom_filled_btn.dart';
 import '../../../../../core/widgets/drug_image_container.dart';
 import '../../manager/home_cubit.dart';
-import '../final_revision_view.dart';
 
 class MobileDrugDialog extends StatelessWidget {
   const MobileDrugDialog({super.key});
@@ -92,7 +92,7 @@ class MobileDrugDialog extends StatelessWidget {
                   electrocardiogram: '',
                   oxSaturation: '',
                 );
-                navigateTo(const FinalRevisionView());
+                navigateTo(const MonitorView());
               },
             ),
           ),

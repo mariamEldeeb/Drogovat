@@ -33,7 +33,7 @@ class CreatePatientErrorState extends HomeStates {
 class UpdatePatientWithVitalsSuccessState extends HomeStates {}
 
 class UpdatePatientWithVitalsErrorState extends HomeStates {
-  final String errorMessage;
-
-  UpdatePatientWithVitalsErrorState(this.errorMessage);
+  // final String errorMessage;
+  //
+  // UpdatePatientWithVitalsErrorState(this.errorMessage);
 }

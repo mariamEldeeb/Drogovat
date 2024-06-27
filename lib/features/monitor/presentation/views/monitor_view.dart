@@ -1,5 +1,6 @@
-import 'package:drogovat/core/utils/colors.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/monitor_view_body.dart';
+import 'package:drogovat/device_info.dart';
+import 'package:drogovat/features/monitor/presentation/views/mobile_monitor_view.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_monitor_layout.dart';
 import 'package:flutter/material.dart';
 
 class MonitorView extends StatelessWidget {
@@ -7,11 +8,8 @@ class MonitorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        backgroundColor: monitorBgColor,
-        body: MonitorViewBody(),
-      ),
+    return SafeArea(
+      child: DeviceInfo.isTablet ? TabMonitorLayout() : MobileMonitorLayout(),
     );
   }
 }

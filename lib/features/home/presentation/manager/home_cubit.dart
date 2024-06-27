@@ -140,7 +140,8 @@ class HomeCubit extends Cubit<HomeStates> {
     }).then((value) {
       emit(UpdatePatientWithVitalsSuccessState());
     }).catchError((error) {
-      emit((UpdatePatientWithVitalsErrorState(error)));
+      print(error);
+      emit((UpdatePatientWithVitalsErrorState()));
     });
   }
 }

@@ -1,22 +1,22 @@
 import 'dart:async';
 
 import 'package:drogovat/core/utils/date_time.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/digital_number_container.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_widgets/digital_number_container.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../../core/utils/colors.dart';
 
-class TimeContainer extends StatefulWidget {
-  const TimeContainer({
+class TabTimeContainer extends StatefulWidget {
+  const TabTimeContainer({
     super.key,
   });
 
   @override
-  State<TimeContainer> createState() => _TimeContainerState();
+  State<TabTimeContainer> createState() => _TabTimeContainerState();
 }
 
-class _TimeContainerState extends State<TimeContainer> {
+class _TabTimeContainerState extends State<TabTimeContainer> {
   late Timer? timer;
   String hour1 = "0", hour2 = "0", minute1 = "0", minute2 = "0";
 
@@ -65,7 +65,7 @@ class _TimeContainerState extends State<TimeContainer> {
             ),
           ),
           DigitalNumberContainer(
-            h: hour,
+            h: nowHour,
             m: minute,
           ),
           const SizedBox(width: 60),
@@ -89,7 +89,7 @@ class _TimeContainerState extends State<TimeContainer> {
             ),
           ),
           DigitalNumberContainer(
-            h: hour,
+            h: nowHour,
             m: minute,
           ),
         ],

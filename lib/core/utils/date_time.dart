@@ -4,7 +4,7 @@ DateTime nowTime = DateTime.now();
 int year = nowTime.year;
 int month = nowTime.month;
 int day = nowTime.day;
-int hour = nowTime.hour % 12;
+int nowHour = nowTime.hour % 12;
 int minute = nowTime.minute;
 int second = nowTime.second;
 

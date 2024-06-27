@@ -1,14 +1,14 @@
 import 'package:drogovat/core/functions/show_custom_dialog.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/dose_info_time.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/previous_dose.dart';
-import 'package:drogovat/features/monitor/presentation/views/widgets/progress_indecator.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_widgets/dose_info_time.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_widgets/previous_dose.dart';
+import 'package:drogovat/features/monitor/presentation/views/tab_widgets/progress_indecator.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 import 'build_warning_dialog.dart';
 
-class DoseInfoContainer extends StatelessWidget {
-  const DoseInfoContainer({
+class TabDoseInfoContainer extends StatelessWidget {
+  const TabDoseInfoContainer({
     super.key,
   });
 

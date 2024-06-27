@@ -22,12 +22,14 @@ class DoseInfoTime extends StatelessWidget {
               ),
             ),
             DigitalNumberContainer(
-              h: hour,
+              h: nowHour,
               m: minute,
             ),
           ],
         ),
-        const SizedBox(height: 15,),
+        const SizedBox(
+          height: 15,
+        ),
         Row(
           children: [
             const Text(
@@ -37,7 +39,9 @@ class DoseInfoTime extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            const SizedBox(width: 30,),
+            const SizedBox(
+              width: 30,
+            ),
             RichText(
               text: const TextSpan(
                 text: '25 ',
