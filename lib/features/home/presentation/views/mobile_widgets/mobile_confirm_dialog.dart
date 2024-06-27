@@ -5,8 +5,8 @@ import '../../../../../core/functions/show_custom_dialog.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/widgets/custom_filled_btn.dart';
 import '../../../../../core/widgets/custom_outline_btn.dart';
-import '../tab_widgets/home_view_widgets/build_drug_dialog.dart';
 import 'mobile_confirm_item.dart';
+import 'mobile_drug_dialog.dart';
 
 class MobileConfirmDialog extends StatelessWidget {
   const MobileConfirmDialog({super.key});
@@ -59,7 +59,7 @@ class MobileConfirmDialog extends StatelessWidget {
               label: 'Period of operation',
               outputText: cubit.opDuration,
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -77,7 +77,7 @@ class MobileConfirmDialog extends StatelessWidget {
                   onTap: () {
                     showCustomDialog(
                       context: context,
-                      child: buildDrugDialog(context),
+                      child: MobileDrugDialog(),
                       barrierColor: dialogBarrierColor,
                     );
                   },
