@@ -7,10 +7,13 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     this.hintText,
     this.controller,
-    this.validate, this.keyboardType,
+    this.validate,
+    this.keyboardType,
+    this.maxLines,
   });
 
   final String? hintText;
+  final int? maxLines;
   final TextEditingController? controller;
   final String? Function(String?)? validate;
   final TextInputType? keyboardType;
@@ -23,8 +26,10 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         keyboardType: keyboardType,
+        maxLines: maxLines,
         onFieldSubmitted: (value) {
           print(value);
+          controller?.dispose();
         },
         style: const TextStyle(
           fontSize: 22,

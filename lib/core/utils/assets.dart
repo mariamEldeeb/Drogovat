@@ -19,6 +19,7 @@ const String Drug4Image = 'assets/images/drug4.png';
 const String splashBG = 'assets/images/splash_bg.svg';
 const String logoName = 'assets/images/logo_name.png';
 const String fadeLogo = 'assets/images/fade_logo.png';
+const String darkLogo = 'assets/images/dark_logo.png';
 
 // vital sign icon
 const String BPIcon = 'assets/icons/BP_icon.png';
@@ -28,3 +29,12 @@ const String heartIcon = 'assets/icons/heart_icon.png';
 const String OSIcon = 'assets/icons/os_icon.png';
 const String RRIcon = 'assets/icons/rr_icon.png';
 const String TIcon = 'assets/icons/temp_icon.png';
+
+//  screenShots from the app
+const String screenShot1 = 'assets/images/screenshot1.png';
+const String screenShot2 = 'assets/images/screenshot2.png';
+const String screenShot3 = 'assets/images/screenshot3.png';
+const String screenShot4 = 'assets/images/screenshot4.png';
+const String screenShot5 = 'assets/images/screenshot5.png';
+const String screenShot6 = 'assets/images/screenshot6.png';
+const String screenShot7 = 'assets/images/screenshot7.png';

@@ -27,7 +27,7 @@ class CustomFilledButton extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           color: darkBlueColor,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
         ),
         child: Center(
           child: Text(
