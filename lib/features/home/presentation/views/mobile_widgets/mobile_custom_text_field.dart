@@ -18,45 +18,40 @@ class MobileCustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 55,
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      child: TextFormField(
-        controller: controller,
-        keyboardType: keyboardType,
-        style: const TextStyle(
-          fontSize: 20,
+    return TextFormField(
+      controller: controller,
+      keyboardType: keyboardType,
+      style: const TextStyle(fontSize: 20),
+      decoration: InputDecoration(
+        hintText: hintText,
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(15),
         ),
-        decoration: InputDecoration(
-          hintText: hintText,
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: darkBlueColor, width: 1),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: darkBlueColor, width: 1),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.red,
-              width: 1,
-            ),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          hintStyle: const TextStyle(
-            color: hintTextColor,
-            fontSize: 19,
-          ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: darkBlueColor, width: 1),
+          borderRadius: BorderRadius.circular(15),
         ),
-        cursorColor: darkBlueColor,
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'This can\'t be empty';
-          }
-          return null;
-        },
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: darkBlueColor, width: 1),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        hintStyle: const TextStyle(
+          color: hintTextColor,
+          fontSize: 19,
+        ),
       ),
+      cursorColor: darkBlueColor,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'This can\'t be empty';
+        }
+        return null;
+      },
     );
   }
 }

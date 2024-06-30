@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           getPages: pages,
-          home: const InitialView(),
+          home: const InitPageView(),
         ),
       );
     });

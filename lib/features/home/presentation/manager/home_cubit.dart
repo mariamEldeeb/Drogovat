@@ -29,6 +29,13 @@ class HomeCubit extends Cubit<HomeStates> {
   String selectedHour = '00';
   String selectedMinute = '00';
 
+  void dispose() {
+    nameController.dispose();
+    heightController.dispose();
+    weightController.dispose();
+    ageController.dispose();
+  }
+
   void createPatient({
     required int pId,
     required String patientName,
