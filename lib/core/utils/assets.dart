@@ -4,7 +4,6 @@ const String homeIconPng = 'assets/icons/home_icon.png';
 const String whiteHomeIcon = 'assets/icons/white_home.svg';
 const String whiteDrugIcon = 'assets/icons/white_drug_sign.svg';
 const String whiteSettingsIcon = 'assets/icons/white_setting_sign.svg';
-const String whiteLine = 'assets/icons/white_line.svg';
 const String settingsIcon = 'assets/icons/setting.svg';
 const String drugIcon = 'assets/icons/drug sign.svg';
 const String drugIconPng = 'assets/icons/drug_icon.png';

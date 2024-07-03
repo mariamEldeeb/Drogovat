@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
+import '../../../../../core/widgets/custom_mobile_app_bar.dart';
 
 class MobileHowToUse extends StatelessWidget {
   const MobileHowToUse({super.key});
@@ -10,6 +11,10 @@ class MobileHowToUse extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: CustomMobileAppBar(
+          title: 'Explanation',
+          isBack: true,
+        ),
         backgroundColor: backgroundColor,
         body: Padding(
           padding:
@@ -20,6 +25,7 @@ class MobileHowToUse extends StatelessWidget {
               SizedBox(height: 30),
               Expanded(
                 child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   child: Column(
                     children: [
                       Text(

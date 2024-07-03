@@ -11,7 +11,7 @@ class MobileDrugLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: CustomMobileAppBar(title: 'Drugs List'),
+      appBar: CustomMobileAppBar(title: 'Drugs List', isBack: false),
       body: Padding(
         padding:
             const EdgeInsets.only(left: 31, right: 31, top: 40, bottom: 20),

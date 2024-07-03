@@ -17,7 +17,7 @@ class MobileSettingLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: CustomMobileAppBar(title: 'Settings'),
+      appBar: CustomMobileAppBar(title: 'Settings', isBack: false),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20),
         child: Column(

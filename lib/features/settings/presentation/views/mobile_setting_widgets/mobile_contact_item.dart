@@ -8,11 +8,13 @@ class MobileContactItem extends StatelessWidget {
     required this.label,
     this.maxLines,
     this.controller,
+    this.validate,
   });
 
   final String label;
   final int? maxLines;
   final TextEditingController? controller;
+  final String? Function(String?)? validate;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +35,10 @@ class MobileContactItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: CustomTextFormField(
-            keyboardType: TextInputType.text,
+            keyboardType: TextInputType.multiline,
             maxLines: maxLines,
             controller: controller,
+            validate: validate,
           ),
         ),
       ],

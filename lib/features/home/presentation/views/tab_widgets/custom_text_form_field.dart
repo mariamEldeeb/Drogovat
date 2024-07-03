@@ -29,7 +29,6 @@ class CustomTextFormField extends StatelessWidget {
         maxLines: maxLines,
         onFieldSubmitted: (value) {
           print(value);
-          controller?.dispose();
         },
         style: const TextStyle(
           fontSize: 22,

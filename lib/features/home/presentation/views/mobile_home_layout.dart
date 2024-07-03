@@ -4,6 +4,7 @@ import 'package:drogovat/features/home/presentation/views/mobile_widgets/mobile_
 import 'package:flutter/material.dart';
 
 import '../../../../core/functions/show_custom_dialog.dart';
+import '../../../../core/functions/show_sncak_bar.dart';
 import '../../../../core/utils/colors.dart';
 import '../manager/home_cubit.dart';
 import 'mobile_widgets/mobile_confirm_dialog.dart';
@@ -24,7 +25,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
     var homeFormKey = GlobalKey<FormState>();
 
     return Scaffold(
-      appBar: CustomMobileAppBar(title: 'Patient Data'),
+      appBar: CustomMobileAppBar(title: 'Patient Data', isBack: false),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Padding(
@@ -358,17 +359,20 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                   height: 50,
                   textColor: Colors.white,
                   onTap: () {
-                    if (homeFormKey.currentState!.validate() ||
-                        cubit.selectedGender!.isNotEmpty ||
-                        cubit.selectedHeartState!.isNotEmpty ||
-                        cubit.selectedHypertension!.isNotEmpty ||
-                        cubit.selectedDiabetes!.isNotEmpty ||
+                    if (homeFormKey.currentState!.validate() &&
+                        cubit.selectedGender!.isNotEmpty &&
+                        cubit.selectedHeartState!.isNotEmpty &&
+                        cubit.selectedHypertension!.isNotEmpty &&
+                        cubit.selectedDiabetes!.isNotEmpty &&
                         cubit.opDuration.isNotEmpty) {
                       showCustomDialog(
                         context: context,
                         barrierColor: Color(0xff7E7D7D).withOpacity(0.7),
                         child: MobileConfirmDialog(),
                       );
+                    } else {
+                      showSnackBar(
+                          text: 'You must answer all questions', title: '');
                     }
                   },
                 ),

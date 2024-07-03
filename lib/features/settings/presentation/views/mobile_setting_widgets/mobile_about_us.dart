@@ -2,6 +2,7 @@ import 'package:drogovat/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
+import '../../../../../core/widgets/custom_mobile_app_bar.dart';
 
 class MobileAboutUs extends StatelessWidget {
   const MobileAboutUs({super.key});
@@ -10,6 +11,10 @@ class MobileAboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: CustomMobileAppBar(
+          title: 'About Us',
+          isBack: true,
+        ),
         backgroundColor: backgroundColor,
         body: Padding(
           padding: const EdgeInsets.only(top: 20, right: 25, left: 25),
