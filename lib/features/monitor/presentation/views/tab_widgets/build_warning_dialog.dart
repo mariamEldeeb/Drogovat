@@ -67,7 +67,7 @@ Widget buildWarningDialog(BuildContext context) {
                   endTidalCarbon: monitorCubit.endTidalCarbon,
                   temp: monitorCubit.temp,
                 );
-                navigateTo(const InitPageView());
+                navigateOffAllTo(const InitPageView());
               },
             ),
           ],

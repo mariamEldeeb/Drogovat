@@ -32,7 +32,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
           padding: EdgeInsets.only(top: 5, left: 17, right: 15, bottom: 20),
           child: Form(
             key: homeFormKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            autovalidateMode: AutovalidateMode.always,
             child: Column(
               children: [
                 //  Name
@@ -80,7 +80,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                        width: 160,
+                        width: 170,
                         child: RadioListTile(
                           title: Text(
                             'Male',
@@ -109,7 +109,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                         ),
                       ),
                       SizedBox(
-                        width: 160,
+                        width: 170,
                         child: RadioListTile(
                           title: Text(
                             'Female',
@@ -387,6 +387,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
   @override
   void dispose() {
     homeCubit.dispose();
+    homeCubit.clearController();
     super.dispose();
   }
 }

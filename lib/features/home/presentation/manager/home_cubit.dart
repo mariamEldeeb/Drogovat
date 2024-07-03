@@ -36,6 +36,13 @@ class HomeCubit extends Cubit<HomeStates> {
     ageController.dispose();
   }
 
+  void clearController() {
+    nameController.clear();
+    heightController.clear();
+    weightController.clear();
+    ageController.clear();
+  }
+
   void createPatient({
     required int pId,
     required String patientName,
@@ -57,7 +64,7 @@ class HomeCubit extends Cubit<HomeStates> {
     String endTidalCarbon = '',
     String temp = '',
   }) {
-    PatientModel pModel = PatientModel(
+    patientModel = PatientModel(
       pId: pId,
       patientName: patientName,
       height: height,
@@ -82,9 +89,10 @@ class HomeCubit extends Cubit<HomeStates> {
     FirebaseFirestore.instance
         .collection(patientCollection)
         .doc(pId.toString())
-        .set(pModel.toMap())
+        .set(patientModel!.toMap())
         .then((value) {
       CacheHelper.saveData(key: 'pId', value: pId);
+      print('stored p Id is: ${pId}');
       emit(CreatePatientSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -92,24 +100,9 @@ class HomeCubit extends Cubit<HomeStates> {
     });
   }
 
-  // void getPatientData() {
-  //   emit(GetPatientDataLoadingState());
-  //
-  //   FirebaseFirestore.instance
-  //       .collection(patientCollection)
-  //       .doc(globalPatientId)
-  //       .get()
-  //       .then((value) {
-  //     patientModel = PatientModel.fromJson(value.data()!);
-  //     emit(GetPatientDataSuccessState());
-  //   }).catchError((error) {
-  //     print(error.toString());
-  //     emit(GetPatientDataErrorState(error));
-  //   });
-  // }
-
   List<PatientModel> patients = [];
   void getAllPatients() {
+    print('get p is called');
     FirebaseFirestore.instance
         .collection(patientCollection)
         .get()
@@ -117,6 +110,7 @@ class HomeCubit extends Cubit<HomeStates> {
       value.docs.forEach((element) {
         patients.add(PatientModel.fromJson(element.data()));
       });
+      print('P list length ${patients.length}');
       emit(GetAllPatientsSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -135,7 +129,7 @@ class HomeCubit extends Cubit<HomeStates> {
   }) {
     FirebaseFirestore.instance
         .collection(patientCollection)
-        .doc('${globalPatientId}')
+        .doc('${patientModel!.pId}')
         .update({
       'heartRate': heartRate,
       'bloodPressure': bloodPressure,

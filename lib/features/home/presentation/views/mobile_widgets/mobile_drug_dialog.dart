@@ -92,7 +92,7 @@ class MobileDrugDialog extends StatelessWidget {
                   electrocardiogram: '',
                   oxSaturation: '',
                 );
-                navigateTo(const MonitorView());
+                navigateOffAllTo(const MonitorView());
               },
             ),
           ),
