@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
-import '../../../../../core/utils/date_time.dart';
-import 'digital_number_container.dart';
 
-class NextPotionTimeContainer extends StatelessWidget {
-  const NextPotionTimeContainer({super.key});
+class BuildNextAmountDose extends StatelessWidget {
+  const BuildNextAmountDose({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +19,17 @@ class NextPotionTimeContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Next Potion at:',
+            'Amount of dose:',
             style: TextStyle(fontSize: 17),
           ),
           const SizedBox(height: 8),
           Center(
-            child: MobileDigitalNumberContainer(
-              h: nowHour,
-              m: minute,
-              timeColor: greenTimeColor,
+            child: Text(
+              '25 ml',
+              style: TextStyle(
+                color: greenTimeColor,
+                fontSize: 28,
+              ),
             ),
           ),
         ],

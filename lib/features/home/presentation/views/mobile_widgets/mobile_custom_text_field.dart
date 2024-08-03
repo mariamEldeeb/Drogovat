@@ -18,40 +18,32 @@ class MobileCustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: keyboardType,
-      style: const TextStyle(fontSize: 20),
-      decoration: InputDecoration(
-        hintText: hintText,
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: darkBlueColor, width: 1),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: darkBlueColor, width: 1),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        hintStyle: const TextStyle(
-          color: hintTextColor,
-          fontSize: 19,
-        ),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
       ),
-      cursorColor: darkBlueColor,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'This can\'t be empty';
-        }
-        return null;
-      },
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        style: const TextStyle(fontSize: 20),
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: InputBorder.none,
+          hintStyle: const TextStyle(
+            color: hintTextColor,
+            fontSize: 19,
+          ),
+        ),
+        cursorColor: darkBlueColor,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'This can\'t be empty';
+          }
+          return null;
+        },
+      ),
     );
   }
 }

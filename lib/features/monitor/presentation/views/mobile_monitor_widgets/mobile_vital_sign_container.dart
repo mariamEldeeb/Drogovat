@@ -1,3 +1,4 @@
+import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets.dart';
@@ -8,6 +9,8 @@ class MobileVitalSignContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = MonitorCubit.get(context);
+
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 1.9,
@@ -21,49 +24,49 @@ class MobileVitalSignContainer extends StatelessWidget {
           BuildVitalItem(
             vitalText: 'HR',
             vitalTextColor: const Color(0xff630101),
-            vitalValue: '120 / 80',
+            vitalValue: cubit.heartRate,
             vitalIcon: heartIcon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'BP',
             vitalTextColor: const Color(0xff964003),
-            vitalValue: '88 - 90',
+            vitalValue: cubit.bloodPressure,
             vitalIcon: BPIcon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'RR',
             vitalTextColor: const Color(0xff7B6902),
-            vitalValue: '12 - 20',
+            vitalValue: cubit.rasRate,
             vitalIcon: RRIcon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'SpO2',
             vitalTextColor: const Color(0xff1C7406),
-            vitalValue: '94 %',
+            vitalValue: cubit.oxSaturation,
             vitalIcon: OSIcon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'EtCO2',
             vitalTextColor: const Color(0xff028585),
-            vitalValue: '35',
+            vitalValue: cubit.endTidalCarbon,
             vitalIcon: CO2Icon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'Temp',
             vitalTextColor: const Color(0xff06085D),
-            vitalValue: '37 ℃',
+            vitalValue: cubit.temp,
             vitalIcon: TIcon,
           ),
           const SizedBox(height: 15),
           BuildVitalItem(
             vitalText: 'ECG',
             vitalTextColor: const Color(0xff3C0866),
-            vitalValue: '75',
+            vitalValue: cubit.electrocardiogram,
             vitalIcon: electrocardiogramIcon,
           ),
         ],

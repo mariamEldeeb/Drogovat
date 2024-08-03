@@ -45,7 +45,7 @@ class _ShowMobileTimeWheelState extends State<ShowMobileTimeWheel> {
                           height: 65,
                           margin: EdgeInsets.symmetric(horizontal: 15),
                           decoration: BoxDecoration(
-                            color: Colors.grey,
+                            color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -60,10 +60,15 @@ class _ShowMobileTimeWheelState extends State<ShowMobileTimeWheel> {
                           child: ListWheelScrollView.useDelegate(
                             itemExtent: 50,
                             perspective: 0.004,
-                            diameterRatio: 1.2,
+                            diameterRatio: 3,
                             physics: FixedExtentScrollPhysics(),
                             useMagnifier: true,
-                            magnification: 1.3,
+                            magnification: 1.4,
+                            onSelectedItemChanged: (index) {
+                              setState(() {
+                                cubit.selectedHour = index.toString();
+                              });
+                            },
                             childDelegate: ListWheelChildBuilderDelegate(
                               childCount: 13,
                               builder: (context, index) {
@@ -72,11 +77,6 @@ class _ShowMobileTimeWheelState extends State<ShowMobileTimeWheel> {
                                 );
                               },
                             ),
-                            onSelectedItemChanged: (index) {
-                              setState(() {
-                                cubit.selectedHour = index.toString();
-                              });
-                            },
                           ),
                         ),
                         Text(
@@ -118,20 +118,21 @@ class _ShowMobileTimeWheelState extends State<ShowMobileTimeWheel> {
                             diameterRatio: 1.2,
                             physics: FixedExtentScrollPhysics(),
                             useMagnifier: true,
-                            magnification: 1.3,
+                            magnification: 1.4,
                             childDelegate: ListWheelChildBuilderDelegate(
-                              childCount: 60,
+                              childCount: 2,
                               builder: (context, index) {
                                 return BuildMobileListWheelItem(
-                                  text: index < 10
-                                      ? '0' + index.toString()
-                                      : index.toString(),
+                                  text: index == 0 ? '00' : '30',
+                                  // index < 10
+                                  //     ? '0' + index.toString()
+                                  //     : index.toString(),
                                 );
                               },
                             ),
                             onSelectedItemChanged: (index) {
                               setState(() {
-                                cubit.selectedMinute = index.toString();
+                                cubit.selectedMinute = index == 0 ? '00' : '30';
                               });
                             },
                           ),
@@ -168,7 +169,6 @@ class _ShowMobileTimeWheelState extends State<ShowMobileTimeWheel> {
             decoration: BoxDecoration(
               color: textFormFiledColor,
               borderRadius: BorderRadius.circular(15),
-              border: Border.all(width: 1, color: darkBlueColor),
             ),
             child: Center(
               child: Text(

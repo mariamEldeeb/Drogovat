@@ -59,6 +59,7 @@ Widget buildWarningDialog(BuildContext context) {
               textColor: Colors.white,
               onTap: () {
                 HomeCubit.get(context).updatePatientWithVitals(
+                  patientStatus: 'Done',
                   heartRate: monitorCubit.heartRate,
                   bloodPressure: monitorCubit.bloodPressure,
                   rasRate: monitorCubit.rasRate,
@@ -67,7 +68,7 @@ Widget buildWarningDialog(BuildContext context) {
                   endTidalCarbon: monitorCubit.endTidalCarbon,
                   temp: monitorCubit.temp,
                 );
-                navigateOffAllTo(const InitPageView());
+                navigateTo(const InitPageView());
               },
             ),
           ],

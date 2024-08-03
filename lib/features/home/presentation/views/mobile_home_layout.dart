@@ -25,6 +25,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
     var homeFormKey = GlobalKey<FormState>();
 
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: CustomMobileAppBar(title: 'Patient Data', isBack: false),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -32,7 +33,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
           padding: EdgeInsets.only(top: 5, left: 17, right: 15, bottom: 20),
           child: Form(
             key: homeFormKey,
-            autovalidateMode: AutovalidateMode.always,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               children: [
                 //  Name
@@ -42,6 +43,15 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                   isTime: false,
                   hintText: 'Enter patient name',
                   controller: cubit.nameController,
+                  inputType: TextInputType.text,
+                ),
+                // op Name
+                MobileQuesItem(
+                  label: 'Operation Name',
+                  isRadio: false,
+                  isTime: false,
+                  hintText: 'Enter the operation',
+                  controller: cubit.opNameController,
                   inputType: TextInputType.text,
                 ),
                 // height
@@ -80,7 +90,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                        width: 170,
+                        width: 160,
                         child: RadioListTile(
                           title: Text(
                             'Male',
@@ -91,9 +101,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -109,7 +119,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                         ),
                       ),
                       SizedBox(
-                        width: 170,
+                        width: 160,
                         child: RadioListTile(
                           title: Text(
                             'Female',
@@ -120,9 +130,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -160,9 +170,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -189,9 +199,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -229,9 +239,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -258,9 +268,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -298,9 +308,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -327,9 +337,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          fillColor: MaterialStateColor.resolveWith(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.selected)) {
+                          fillColor: WidgetStateColor.resolveWith(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.selected)) {
                                 return darkBlueColor;
                               }
                               return Colors.black45;
@@ -387,7 +397,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
   @override
   void dispose() {
     homeCubit.dispose();
-    homeCubit.clearController();
+    homeCubit.clearControllers();
     super.dispose();
   }
 }

@@ -89,9 +89,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -118,9 +118,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -160,9 +160,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -189,9 +189,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -231,9 +231,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -260,9 +260,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -302,9 +302,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;
@@ -331,9 +331,9 @@ class _HomeTabLayoutState extends State<HomeTabLayout> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      fillColor: MaterialStateColor.resolveWith(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.selected)) {
+                      fillColor: WidgetStateColor.resolveWith(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.selected)) {
                             return darkBlueColor;
                           }
                           return Colors.black45;

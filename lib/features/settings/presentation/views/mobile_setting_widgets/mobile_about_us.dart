@@ -22,17 +22,13 @@ class MobileAboutUs extends StatelessWidget {
             children: [
               Image.asset(darkLogo),
               SizedBox(height: 30),
-              SingleChildScrollView(
-                child: Expanded(
-                  child: Text(
-                    'It is an application that\nperforms the anesthesia process\nin an automatic manner by\n'
-                    'entering the patient\'s data. The AI determines the appropriate\ntype of anesthetic and the\n'
-                    'first dose. Then, as soon as you press start the process and the doses begin to be pumped in a calculated\n'
-                    'periodic manner throughout the operation period',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20, height: 2),
-                  ),
-                ),
+              Text(
+                'It is an application that\nperforms the anesthesia process\nin an automatic manner by\n'
+                'entering the patient\'s data. The AI determines the appropriate\ntype of anesthetic and the\n'
+                'first dose. Then, as soon as you press start the process and the doses begin to be pumped in a calculated\n'
+                'periodic manner throughout the operation period',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 22, height: 2),
               ),
             ],
           ),

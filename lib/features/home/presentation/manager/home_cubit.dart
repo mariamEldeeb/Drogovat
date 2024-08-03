@@ -21,6 +21,7 @@ class HomeCubit extends Cubit<HomeStates> {
   String? selectedOpType = '';
 
   var nameController = TextEditingController();
+  var opNameController = TextEditingController();
   var heightController = TextEditingController();
   var weightController = TextEditingController();
   var ageController = TextEditingController();
@@ -31,13 +32,15 @@ class HomeCubit extends Cubit<HomeStates> {
 
   void dispose() {
     nameController.dispose();
+    opNameController.dispose();
     heightController.dispose();
     weightController.dispose();
     ageController.dispose();
   }
 
-  void clearController() {
+  void clearControllers() {
     nameController.clear();
+    opNameController.clear();
     heightController.clear();
     weightController.clear();
     ageController.clear();
@@ -46,6 +49,8 @@ class HomeCubit extends Cubit<HomeStates> {
   void createPatient({
     required int pId,
     required String patientName,
+    required String opName,
+    required String patientStatus,
     required String height,
     required String weight,
     required String age,
@@ -53,7 +58,6 @@ class HomeCubit extends Cubit<HomeStates> {
     required String heartState,
     required String hypertension,
     required String diabetes,
-    required String typeOfOp,
     required String periodOfOp,
     required String drugId,
     String heartRate = '',
@@ -64,9 +68,11 @@ class HomeCubit extends Cubit<HomeStates> {
     String endTidalCarbon = '',
     String temp = '',
   }) {
-    patientModel = PatientModel(
+    PatientModel pModel = PatientModel(
       pId: pId,
       patientName: patientName,
+      opName: opName,
+      patientStatus: patientStatus,
       height: height,
       weight: weight,
       age: age,
@@ -74,7 +80,6 @@ class HomeCubit extends Cubit<HomeStates> {
       heartState: heartState,
       hypertension: hypertension,
       diabetes: diabetes,
-      typeOfOp: typeOfOp,
       periodOfOp: periodOfOp,
       drugId: drugId,
       heartRate: heartRate,
@@ -89,10 +94,9 @@ class HomeCubit extends Cubit<HomeStates> {
     FirebaseFirestore.instance
         .collection(patientCollection)
         .doc(pId.toString())
-        .set(patientModel!.toMap())
+        .set(pModel.toMap())
         .then((value) {
       CacheHelper.saveData(key: 'pId', value: pId);
-      print('stored p Id is: ${pId}');
       emit(CreatePatientSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -100,9 +104,25 @@ class HomeCubit extends Cubit<HomeStates> {
     });
   }
 
+  // void getPatientData() {
+  //   emit(GetPatientDataLoadingState());
+  //
+  //   FirebaseFirestore.instance
+  //       .collection(patientCollection)
+  //       .doc(globalPatientId)
+  //       .get()
+  //       .then((value) {
+  //     patientModel = PatientModel.fromJson(value.data()!);
+  //     emit(GetPatientDataSuccessState());
+  //   }).catchError((error) {
+  //     print(error.toString());
+  //     emit(GetPatientDataErrorState(error));
+  //   });
+  // }
+
   List<PatientModel> patients = [];
+
   void getAllPatients() {
-    print('get p is called');
     FirebaseFirestore.instance
         .collection(patientCollection)
         .get()
@@ -110,7 +130,6 @@ class HomeCubit extends Cubit<HomeStates> {
       value.docs.forEach((element) {
         patients.add(PatientModel.fromJson(element.data()));
       });
-      print('P list length ${patients.length}');
       emit(GetAllPatientsSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -119,6 +138,7 @@ class HomeCubit extends Cubit<HomeStates> {
   }
 
   void updatePatientWithVitals({
+    required String patientStatus,
     required String heartRate,
     required String bloodPressure,
     required String rasRate,
@@ -129,8 +149,9 @@ class HomeCubit extends Cubit<HomeStates> {
   }) {
     FirebaseFirestore.instance
         .collection(patientCollection)
-        .doc('${patientModel!.pId}')
+        .doc('${globalPatientId}')
         .update({
+      'patientStatus': patientStatus,
       'heartRate': heartRate,
       'bloodPressure': bloodPressure,
       'rasRate': rasRate,
@@ -142,7 +163,21 @@ class HomeCubit extends Cubit<HomeStates> {
       emit(UpdatePatientWithVitalsSuccessState());
     }).catchError((error) {
       print(error);
-      emit((UpdatePatientWithVitalsErrorState()));
+      emit((UpdatePatientWithVitalsErrorState(error.toString())));
+    });
+  }
+
+  void updatePatientStatus({required String status}) {
+    FirebaseFirestore.instance
+        .collection(patientCollection)
+        .doc('${patientModel!.pId}')
+        .update({
+      'status': status,
+    }).then((value) {
+      emit(UpdatePatientWithVitalsSuccessState());
+    }).catchError((error) {
+      print(error);
+      emit((UpdatePatientWithVitalsErrorState(error.toString())));
     });
   }
 }

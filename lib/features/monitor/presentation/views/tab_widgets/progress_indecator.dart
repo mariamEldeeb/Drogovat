@@ -1,6 +1,6 @@
 import 'package:drogovat/device_info.dart';
 import 'package:flutter/material.dart';
-import 'package:liquid_progress_indicator_v2/liquid_progress_indicator.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class CustomProgressIndicator extends StatefulWidget {
   const CustomProgressIndicator({super.key});
@@ -16,57 +16,42 @@ class _CustomProgressIndicatorState extends State<CustomProgressIndicator> {
     return Padding(
       padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: DeviceInfo.isTablet
-          ? Row(
-              children: [
-                Container(
-                  height: 171,
-                  width: 30,
-                  child: LiquidLinearProgressIndicator(
-                    value: 0.7,
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-                    backgroundColor: Colors.white,
-                    borderRadius: 30,
-                    direction: Axis.vertical,
-                  ),
+          ? RotatedBox(
+              quarterTurns: -1,
+              child: LinearPercentIndicator(
+                animation: true,
+                animationDuration: 1000,
+                width: 200,
+                lineHeight: 35,
+                percent: 0.5,
+                center: Text(
+                  "50%",
+                  style: new TextStyle(fontSize: 20),
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                const Text(
-                  '75 %',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+                backgroundColor: Colors.white,
+                barRadius: Radius.circular(30),
+                progressColor: Colors.blueAccent,
+              ),
             )
-          : Column(
-              children: [
-                Container(
-                  height: 171,
-                  width: 30,
-                  child: LiquidLinearProgressIndicator(
-                    value: 0.7,
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-                    backgroundColor: Colors.white,
-                    borderRadius: 30,
-                    direction: Axis.vertical,
+          : Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: RotatedBox(
+                quarterTurns: -1,
+                child: LinearPercentIndicator(
+                  animation: true,
+                  animationDuration: 1000,
+                  width: 200,
+                  lineHeight: 35,
+                  percent: 0.5,
+                  center: Text(
+                    "50%",
+                    style: new TextStyle(fontSize: 20),
                   ),
+                  backgroundColor: Colors.white,
+                  barRadius: Radius.circular(15),
+                  progressColor: Colors.blue,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  '75 %',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+              ),
             ),
     );
   }

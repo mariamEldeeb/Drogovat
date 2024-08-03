@@ -9,6 +9,7 @@ const String drugIcon = 'assets/icons/drug sign.svg';
 const String drugIconPng = 'assets/icons/drug_icon.png';
 const String warningSign = 'assets/icons/warning_sign.png';
 const String addDrugIcon = 'assets/icons/add_drug_icon.png';
+const String alertIcon = 'assets/icons/warning_icon.png';
 
 // images
 const String Drug1Image = 'assets/images/drug1.png';
@@ -37,3 +38,6 @@ const String screenShot4 = 'assets/images/screenshot4.png';
 const String screenShot5 = 'assets/images/screenshot5.png';
 const String screenShot6 = 'assets/images/screenshot6.png';
 const String screenShot7 = 'assets/images/screenshot7.png';
+
+//  AI model
+const String aiModelPath = 'assets/ai_model/ppo_anesthesia_model.tflite';

@@ -73,6 +73,7 @@ class MobileDrugDialog extends StatelessWidget {
                 HomeCubit.get(context).createPatient(
                   pId: HomeCubit.get(context).patients.length + 1,
                   patientName: HomeCubit.get(context).nameController.text,
+                  patientStatus: 'Active',
                   height: HomeCubit.get(context).heightController.text,
                   weight: HomeCubit.get(context).weightController.text,
                   age: HomeCubit.get(context).ageController.text,
@@ -81,7 +82,6 @@ class MobileDrugDialog extends StatelessWidget {
                   hypertension:
                       HomeCubit.get(context).selectedHypertension ?? '',
                   diabetes: HomeCubit.get(context).selectedDiabetes ?? '',
-                  typeOfOp: HomeCubit.get(context).selectedOpType ?? '',
                   periodOfOp: HomeCubit.get(context).opDuration,
                   drugId: 'drug3',
                   temp: '',
@@ -91,8 +91,9 @@ class MobileDrugDialog extends StatelessWidget {
                   bloodPressure: '',
                   electrocardiogram: '',
                   oxSaturation: '',
+                  opName: HomeCubit.get(context).opNameController.text,
                 );
-                navigateOffAllTo(const MonitorView());
+                navigateTo(const MonitorView());
               },
             ),
           ),

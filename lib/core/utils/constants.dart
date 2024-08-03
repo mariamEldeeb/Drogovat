@@ -5,3 +5,4 @@ List<DrugModel> drugs = [];
 String patientCollection = 'patients';
 String vitalsCollection = 'vitals';
 String drugsCollection = 'drugs';
+int? globalPatientId;
