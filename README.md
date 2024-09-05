@@ -1,16 +1,10 @@
-# drogovat
+# Drogovat
 
-A new Flutter project.
+An application to enhance the anesthesia process.
 
-## Getting Started
+## App Description  
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The doctor enters the patient's data which will affect the anesthesia process.
+Then the AI will determine the right drug type and dose(full amount of dose, initial dose, and maintenance dose).
+The app will monitor the patient's vital signs and the level of the solution, if any error happens for the patient or the solution is close to finish the app will alert the doctor by sending a notification to the doctor's app and determine the next dose he should put in the solution by AI.
+It also shows the drugs available in the hospital and information about each.
