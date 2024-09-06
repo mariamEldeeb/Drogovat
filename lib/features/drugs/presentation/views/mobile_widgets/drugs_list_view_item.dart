@@ -16,7 +16,7 @@ class DrugsListViewItem extends StatelessWidget {
     return InkWell(
       onTap: () {
         navigateTo(
-          DrugDetails(
+          () => DrugDetails(
             index: index,
           ),
         );

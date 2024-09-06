@@ -38,19 +38,11 @@ class HomeCubit extends Cubit<HomeStates> {
     ageController.dispose();
   }
 
-  void clearControllers() {
-    nameController.clear();
-    opNameController.clear();
-    heightController.clear();
-    weightController.clear();
-    ageController.clear();
-  }
-
   void createPatient({
     required int pId,
     required String patientName,
-    required String opName,
     required String patientStatus,
+    required String opName,
     required String height,
     required String weight,
     required String age,
@@ -97,28 +89,13 @@ class HomeCubit extends Cubit<HomeStates> {
         .set(pModel.toMap())
         .then((value) {
       CacheHelper.saveData(key: 'pId', value: pId);
+      globalPatientId = pId;
       emit(CreatePatientSuccessState());
     }).catchError((error) {
       print(error.toString());
       emit(CreatePatientErrorState(error.toString()));
     });
   }
-
-  // void getPatientData() {
-  //   emit(GetPatientDataLoadingState());
-  //
-  //   FirebaseFirestore.instance
-  //       .collection(patientCollection)
-  //       .doc(globalPatientId)
-  //       .get()
-  //       .then((value) {
-  //     patientModel = PatientModel.fromJson(value.data()!);
-  //     emit(GetPatientDataSuccessState());
-  //   }).catchError((error) {
-  //     print(error.toString());
-  //     emit(GetPatientDataErrorState(error));
-  //   });
-  // }
 
   List<PatientModel> patients = [];
 
@@ -149,7 +126,7 @@ class HomeCubit extends Cubit<HomeStates> {
   }) {
     FirebaseFirestore.instance
         .collection(patientCollection)
-        .doc('${globalPatientId}')
+        .doc('$globalPatientId')
         .update({
       'patientStatus': patientStatus,
       'heartRate': heartRate,
@@ -160,8 +137,10 @@ class HomeCubit extends Cubit<HomeStates> {
       'temp': temp,
       'electrocardiogram': electrocardiogram,
     }).then((value) {
+      print('$globalPatientId');
       emit(UpdatePatientWithVitalsSuccessState());
     }).catchError((error) {
+      print('$globalPatientId');
       print(error);
       emit((UpdatePatientWithVitalsErrorState(error.toString())));
     });

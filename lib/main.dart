@@ -3,7 +3,6 @@ import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/features/home/presentation/manager/home_cubit.dart';
 import 'package:drogovat/features/init_page/presentation/manager/init_page_cubit.dart';
 import 'package:drogovat/features/monitor/presentation/manager/monitor_cubit.dart';
-import 'package:drogovat/features/monitor/presentation/views/monitor_view.dart';
 import 'package:drogovat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +46,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           getPages: pages,
-          home: const MonitorView(),
+          // home: const MonitorView(),
         ),
       );
     });

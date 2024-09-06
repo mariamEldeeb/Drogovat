@@ -60,6 +60,7 @@ class DrugDetails extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
+            height: double.infinity,
             margin: EdgeInsets.only(top: 30),
             padding: EdgeInsets.only(left: 20, right: 20, bottom: 25, top: 90),
             decoration: const BoxDecoration(

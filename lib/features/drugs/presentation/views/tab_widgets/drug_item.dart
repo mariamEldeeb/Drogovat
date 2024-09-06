@@ -14,7 +14,7 @@ class DrugItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        navigateTo(DrugDescriptionView(index: index));
+        navigateTo(() => DrugDescriptionView(index: index));
       },
       child: Stack(
         children: [

@@ -17,8 +17,6 @@ class HomeMobileLayout extends StatefulWidget {
 }
 
 class _HomeMobileLayoutState extends State<HomeMobileLayout> {
-  late HomeCubit homeCubit;
-
   @override
   Widget build(BuildContext context) {
     var cubit = HomeCubit.get(context);
@@ -396,8 +394,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
 
   @override
   void dispose() {
-    homeCubit.dispose();
-    homeCubit.clearControllers();
+    HomeCubit.get(context).dispose();
     super.dispose();
   }
 }

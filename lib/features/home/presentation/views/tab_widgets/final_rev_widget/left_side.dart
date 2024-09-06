@@ -1,4 +1,3 @@
-import 'package:drogovat/core/cache_helper.dart';
 import 'package:drogovat/core/utils/colors.dart';
 import 'package:drogovat/core/widgets/drug_image_container.dart';
 import 'package:drogovat/core/widgets/large_button.dart';
@@ -118,7 +117,6 @@ class LeftSide extends StatelessWidget {
             text: 'Start Operation',
             color: gradiantGreenColor,
             onTap: () {
-              globalPatientId = CacheHelper.getData(key: 'pId');
               Get.to(() => MonitorView());
             },
           ),

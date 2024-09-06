@@ -1,25 +1,25 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-navigateTo(Widget page){
+navigateTo(Widget Function() page) {
   Get.to(
-      () => page,
+    page,
     duration: const Duration(milliseconds: 300),
     transition: Transition.fade,
   );
 }
 
-navigateOffTo(Widget page){
+navigateOffTo(Widget Function() page) {
   Get.off(
-        () => page,
+    page,
     duration: const Duration(milliseconds: 300),
     transition: Transition.fade,
   );
 }
 
-navigateOffAllTo(Widget page){
+navigateOffAllTo(Widget Function() page) {
   Get.offAll(
-        () => page,
+    page,
     duration: const Duration(milliseconds: 300),
     transition: Transition.fade,
   );

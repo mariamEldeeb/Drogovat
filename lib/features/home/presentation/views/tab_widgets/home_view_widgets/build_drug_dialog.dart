@@ -95,7 +95,7 @@ buildDrugDialog(BuildContext context) {
                   oxSaturation: '',
                   opName: HomeCubit.get(context).opNameController.text,
                 );
-                navigateTo(const FinalRevisionView());
+                navigateTo(() => FinalRevisionView());
               },
             ),
           ],

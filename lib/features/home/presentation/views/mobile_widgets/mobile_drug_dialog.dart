@@ -93,7 +93,7 @@ class MobileDrugDialog extends StatelessWidget {
                   oxSaturation: '',
                   opName: HomeCubit.get(context).opNameController.text,
                 );
-                navigateTo(const MonitorView());
+                navigateTo(() => MonitorView());
               },
             ),
           ),
